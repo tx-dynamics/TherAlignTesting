@@ -108,7 +108,7 @@ const Form = ({ navigate }) => {
 };
 
 const Header = () => (
-  <View style={{ marginBottom: height(10) }}>
+  <View style={{ marginBottom: height(5) }}>
     <AppText
       style={{
         fontSize: fontSize.h4,

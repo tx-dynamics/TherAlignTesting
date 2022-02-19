@@ -83,8 +83,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   card: {
-    width: width(26.6),
-    // height: height(6),
+    width: width(26),
     padding: 15,
     alignItems: "center",
     justifyContent: "center",

@@ -12,14 +12,14 @@ export default function App() {
   const [user, setUser] = useState(true);
 
   return (
-    // <NavigationContainer theme={navigationTheme}>
-    //   {user ? (
-    //     <AppBottomTabNavigator setUser={setUser} />
-    //   ) : (
-    //     <AuthNavigator setUser={setUser} />
-    //   )}
-    //   <StatusBar style="auto" />
-    // </NavigationContainer>
+    <NavigationContainer theme={navigationTheme}>
+      {user ? (
+        <AppBottomTabNavigator setUser={setUser} />
+      ) : (
+        <AuthNavigator setUser={setUser} />
+      )}
+      <StatusBar style="auto" />
+    </NavigationContainer>
 
     // <NavigationContainer theme={navigationTheme}>
     //   <CaseLoadScreen />
@@ -33,7 +33,7 @@ export default function App() {
     // <View style={{ justifyContent: "center", flex: 1 }}>
     //   <AppButton title={"Test"} />
     // </View>
-    <AvailableScreen />
+    // <AvailableScreen />
     // <View style={{ flex: 1 }}>
     // </View>
     // <NativeBaseProvider>

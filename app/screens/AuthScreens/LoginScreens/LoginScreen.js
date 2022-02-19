@@ -84,7 +84,11 @@ function LoginScreen({ navigation }) {
             onPress={() =>
               navigation.navigate(AuthRoutes.SUCCESSFUL_PASSWORD_CHANGE_SCREEN)
             }
-            style={{ textDecorationLine: "underline", textAlign: "center" }}
+            style={{
+              textDecorationLine: "underline",
+              textAlign: "right",
+              marginTop: 10,
+            }}
           >
             Forgot Password?
           </AppText>

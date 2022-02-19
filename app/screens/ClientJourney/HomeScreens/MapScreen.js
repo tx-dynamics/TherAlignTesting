@@ -206,7 +206,6 @@ export default function MapScreen({ navigation, route }) {
                   resizeMode: "cover",
                   height: 50,
                   borderRadius: 15,
-                  // backgroundColor: "red",
                 }}
                 source={therapi.imageURI}
               />
@@ -215,10 +214,17 @@ export default function MapScreen({ navigation, route }) {
         </MapView>
         {/* Loction btn */}
         <TouchableOpacity
+          activeOpacity={0.4}
           style={{
+            width: width(12),
+            height: height(6),
             position: "absolute",
-            bottom: 230,
-            right: 18,
+            bottom: height(20),
+            right: width(5),
+            alignItems: "center",
+            justifyContent: "center",
+            borderRadius: 15,
+            backgroundColor: colors.white,
           }}
         >
           <Ionicons

@@ -60,12 +60,13 @@ function SuccessfulPasswordChangeScreen({ navigation }) {
           style={{
             textAlign: "center",
             fontSize: fontSize.medium,
+            marginBottom: 20,
           }}
         >
           Please use the new password when logging in.
         </AppText>
         <AppButton
-          title={"Log In Now"}
+          title={"Log In"}
           onPress={() => navigation.navigate(AuthRoutes.LOGIN_SCREEN)}
         />
       </View>
@@ -76,9 +77,8 @@ function SuccessfulPasswordChangeScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    // alignItems: "center",
     padding: 10,
+    justifyContent: "center",
   },
 });
 
