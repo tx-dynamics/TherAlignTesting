@@ -1,13 +1,13 @@
 import moment from "moment";
 import React, { useState } from "react";
 import { View, StyleSheet } from "react-native";
-import { height, width } from "react-native-dimension";
 import AppButton from "../../../components/Button";
 import Calendar from "../../../components/Calendar";
 import CustomModal from "../../../components/CustomModal";
 import AppText from "../../../components/Text";
 import colors from "../../../config/colors";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { hp, wp } from "../../../Helpers/Responsiveness";
 
 function MoodCalendar(props) {
   const [selectedDate, setSelectedDate] = useState("");
@@ -17,20 +17,22 @@ function MoodCalendar(props) {
   return (
     <View style={styles.container}>
       <View>
-        <AppText style={{ textAlign: "center", fontWeight: "700" }}>
+        <AppText
+          style={{ textAlign: "center", fontWeight: "700", fontSize: wp(6) }}
+        >
           Mood Calendar
         </AppText>
-        <View style={{ height: height(45) }}>
+        <View style={{ height: hp(45) }}>
           <Calendar
             setCalendarDate={setSelectedDate}
             backgroundColor={colors.lightBlue}
           />
         </View>
+        <AppButton
+          title={"Set Your Mood"}
+          onPress={() => setModalVisible(true)}
+        />
       </View>
-      <AppButton
-        title={"Set Your Mood"}
-        onPress={() => setModalVisible(true)}
-      />
       <Modal
         date={date}
         modalVisible={modalVisible}
@@ -43,19 +45,19 @@ function MoodCalendar(props) {
 const Modal = ({ date, modalVisible, setModalVisible }) => (
   <CustomModal cardBgColor={"#dceaf4"} modalVisible={modalVisible}>
     <MaterialCommunityIcons
-      name="close-outline"
+      name="close"
       size={25}
-      style={{ position: "absolute", right: 10, top: 10 }}
+      style={{ position: "absolute", right: wp(2), top: wp(2) }}
       onPress={() => setModalVisible(false)}
     />
-    <View style={{ padding: 30 }}>
+    <View style={{ padding: wp(5) }}>
       <AppText
         style={{
           backgroundColor: colors.primary,
-          padding: 10,
-          width: width(30),
+          padding: wp(2),
+          width: wp(30),
           textAlign: "center",
-          marginVertical: 20,
+          marginVertical: wp(4),
         }}
       >
         Content
@@ -66,7 +68,7 @@ const Modal = ({ date, modalVisible, setModalVisible }) => (
 );
 
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 10 },
+  container: { flex: 1, padding: wp(2) },
 });
 
 export default MoodCalendar;

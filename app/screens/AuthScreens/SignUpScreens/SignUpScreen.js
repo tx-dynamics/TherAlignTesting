@@ -1,14 +1,14 @@
 import React from "react";
 import { View, StyleSheet, ScrollView } from "react-native";
 import AppText from "../../../components/Text";
-import { fontSize } from "../../../config/fonts";
+
 import colors from "../../../config/colors";
 import AppButton from "../../../components/Button";
 import { Formik } from "formik";
 import AppFormField from "../../../components/forms/FormField";
 import * as Yup from "yup";
 import { AuthRoutes } from "../../../navigation/Routes";
-import { height } from "react-native-dimension";
+import { hp, wp } from "../../../Helpers/Responsiveness";
 
 const validationSchema = Yup.object().shape({
   email: Yup.string().required().email().label("Email"),
@@ -92,7 +92,7 @@ const Form = ({ navigate }) => {
         )}
       </Formik>
 
-      <View style={{ marginVertical: 20 }}>
+      <View style={{ marginVertical: wp(4) }}>
         <AppText style={{ textAlign: "center" }}>
           Already have an account?{" "}
           <AppText
@@ -108,18 +108,18 @@ const Form = ({ navigate }) => {
 };
 
 const Header = () => (
-  <View style={{ marginBottom: height(5) }}>
+  <View style={{ marginBottom: wp(5) }}>
     <AppText
       style={{
-        fontSize: fontSize.h4,
+        fontSize: wp(8),
         fontWeight: "700",
         color: colors.primary,
-        paddingBottom: 5,
+        paddingBottom: wp(1),
       }}
     >
       Welcome to TherAlign!
     </AppText>
-    <AppText style={{ paddingBottom: 20 }}>
+    <AppText style={{ paddingBottom: wp(4) }}>
       Joi 1M+ top Therapist today, for free!
     </AppText>
   </View>
@@ -128,7 +128,7 @@ const Header = () => (
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingHorizontal: 20,
+    paddingHorizontal: wp(4),
   },
 });
 

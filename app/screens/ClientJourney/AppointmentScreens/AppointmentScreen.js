@@ -1,12 +1,13 @@
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 import OnlineConsultencyAppointmentTab from "./OnlineConsultencyAppointmentTab";
 import InPersonAppointmentTab from "./InPersonAppointmentTab";
+import colors from "../../../config/colors";
 
 const Tab = createMaterialTopTabNavigator();
 
 function AppointmentScreen() {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator screenOptions={{ tabBarPressColor: colors.lightBlue }}>
       <Tab.Screen
         name="OnlineConsultencyTab"
         component={OnlineConsultencyAppointmentTab}

@@ -4,9 +4,15 @@ import * as ImagePicker from "expo-image-picker";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import colors from "../config/colors";
 import AppButton from "./Button";
-import { height, width } from "react-native-dimension";
+import AppText from "./Text";
+import { hp, wp } from "../Helpers/Responsiveness";
 
-function ImageInput() {
+function ImageInput({
+  containerStyle = {},
+  imageStyle = {},
+  bioTitle,
+  bioDescription,
+}) {
   const [image, setImage] = useState(null);
 
   const requestPermission = async () => {
@@ -41,8 +47,8 @@ function ImageInput() {
   };
 
   return (
-    <View style={styles.container}>
-      <View style={styles.imageContainer}>
+    <View style={[styles.container, { ...containerStyle }]}>
+      <View style={[styles.imageContainer, { ...imageStyle }]}>
         {!image && (
           <MaterialCommunityIcons
             color={colors.medium}
@@ -50,16 +56,31 @@ function ImageInput() {
             size={40}
           />
         )}
-        {image && <Image source={{ uri: image }} style={styles.image} />}
+        {image && (
+          <Image
+            source={{ uri: image }}
+            style={[styles.image, { ...imageStyle }]}
+          />
+        )}
       </View>
-      <AppButton
-        title={"Upload Your avatar"}
-        onPress={handlePress}
-        borderWidth={0.5}
-        textColor={colors.black}
-        fontWeight={"bold"}
-        color={colors.white}
-      />
+      <View>
+        <AppButton
+          title={"Upload Your avatar"}
+          onPress={handlePress}
+          borderWidth={0.5}
+          textColor={colors.black}
+          fontWeight={"bold"}
+          color={colors.white}
+        />
+        {bioTitle && (
+          <View style={styles.bio}>
+            <AppText>{bioTitle}</AppText>
+            <AppText style={{ fontSize: wp(3.5), color: colors.textGray }}>
+              {bioDescription}
+            </AppText>
+          </View>
+        )}
+      </View>
     </View>
   );
 }
@@ -70,17 +91,21 @@ const styles = StyleSheet.create({
   },
   imageContainer: {
     alignItems: "center",
-    width: width(35),
-    height: height(20),
+    width: wp(35),
+    height: hp(20),
     backgroundColor: colors.light,
     justifyContent: "center",
     overflow: "hidden",
     borderRadius: 10,
-    marginBottom: 10,
+    marginBottom: wp(2),
   },
   image: {
     width: "100%",
     height: "100%",
+  },
+  bio: {
+    marginTop: wp(2),
+    width: wp(55),
   },
 });
 

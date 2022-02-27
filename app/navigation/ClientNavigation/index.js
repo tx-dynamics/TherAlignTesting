@@ -1,5 +1,3 @@
-import AppBottomTabNavigator from "./AppBottomTabNavigator";
-import AppointmentNavigator from "./AppointmentNavigator";
-import HomeNavigator from "./HomeNavigator";
+import ClientBottomTabNavigator from "./ClientBottomTabNavigator";
 
-export { HomeNavigator, AppointmentNavigator, AppBottomTabNavigator };
+export { ClientBottomTabNavigator };

@@ -2,7 +2,7 @@ import React from "react";
 import { Text, StyleSheet, TouchableOpacity } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import colors from "../config/colors";
-import { fontSize } from "../config/fonts";
+import { wp } from "../Helpers/Responsiveness";
 
 function AppButton({
   title,
@@ -22,13 +22,13 @@ function AppButton({
       style={[
         styles.button,
         {
-          ...style,
           backgroundColor: colors[color],
           borderWidth: borderWidth ? borderWidth : 0,
           width: width && width,
           justifyContent: "center",
           alignItems: "center",
           flexDirection: "row",
+          ...style,
         },
       ]}
       onPress={onPress}
@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
   },
   text: {
     color: colors.white,
-    fontSize: fontSize.large,
+    fontSize: wp(3.5),
   },
 });
 

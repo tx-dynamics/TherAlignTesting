@@ -3,34 +3,32 @@ import {
   View,
   StyleSheet,
   Image,
-  TouchableOpacity,
   ScrollView,
+  TouchableOpacity,
 } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import Screen from "../../../components/Screen";
-import AppText from "../../../components/Text";
 import AppTextInput from "../../../components/TextInput";
 import colors from "../../../config/colors";
+import AppText from "../../../components/Text";
+import { wp } from "../../../Helpers/Responsiveness";
 
 function InPersonCaseLoadTab({ navigation }) {
   return (
-    <Screen style={styles.container}>
+    <View style={styles.container}>
       <AppTextInput
         placeholder="Search Therapist, Practice"
         searchIcon
         iconAlign="left"
+        handleChangeText={() => {}}
       />
-      <ScrollView style={{ marginTop: 20 }}>
-        <TouchableOpacity
-          onPress={() => navigation.navigate("AppointmentTherapistAddress")}
-        >
+      <ScrollView style={{ marginTop: wp(4) }}>
+        <TouchableOpacity onPress={() => navigation.navigate("ClientProfile")}>
           <CallCards />
         </TouchableOpacity>
-        <TouchableOpacity>
-          <CallCards />
-        </TouchableOpacity>
+        <CallCards />
       </ScrollView>
-    </Screen>
+    </View>
   );
 }
 
@@ -40,12 +38,12 @@ const CallCards = (props) => {
       style={{
         backgroundColor: "#DCEAF4",
         width: "100%",
-        padding: 25,
-        paddingHorizontal: 30,
+        padding: wp(5),
+        paddingHorizontal: wp(6),
         borderRadius: 20,
         flexDirection: "row",
         overflow: "hidden",
-        marginBottom: 20,
+        marginBottom: wp(4),
       }}
     >
       {/* Card Image */}
@@ -53,15 +51,15 @@ const CallCards = (props) => {
         <Image
           source={require("../../../assets/images/dr1.jpg")}
           style={{
-            width: 80,
-            height: 80,
+            width: wp(20),
+            height: wp(20),
             borderRadius: 20,
           }}
         />
         <View
           style={{
-            width: 30,
-            height: 30,
+            width: wp(7),
+            height: wp(7),
             borderRadius: 10,
             backgroundColor: "green",
             justifyContent: "center",
@@ -72,7 +70,7 @@ const CallCards = (props) => {
           }}
         >
           <MaterialCommunityIcons
-            name="map-marker-outline"
+            name="video-outline"
             size={20}
             color={"white"}
           />
@@ -81,9 +79,9 @@ const CallCards = (props) => {
 
       {/* Content */}
 
-      <View style={{ marginHorizontal: 20 }}>
-        <AppText style={{ color: colors.medium, marginVertical: 5 }}>
-          Appointment
+      <View style={{ marginHorizontal: wp(4) }}>
+        <AppText style={{ color: colors.medium, marginVertical: wp(1.5) }}>
+          Video call
         </AppText>
         <AppText>Virginia Bailey</AppText>
         <AppText>9.00 AM - 8.10 PM</AppText>
@@ -93,7 +91,7 @@ const CallCards = (props) => {
 };
 
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 10 },
+  container: { flex: 1, padding: wp(4) },
 });
 
 export default InPersonCaseLoadTab;

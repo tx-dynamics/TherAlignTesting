@@ -7,6 +7,7 @@ import colors from "../../../config/colors";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import { AuthRoutes } from "../../../navigation/Routes";
+import { wp } from "../../../Helpers/Responsiveness";
 
 const validationSchema = Yup.object().shape({
   email: Yup.string().required().email().label("Email"),
@@ -87,7 +88,7 @@ function LoginScreen({ navigation }) {
             style={{
               textDecorationLine: "underline",
               textAlign: "right",
-              marginTop: 10,
+              marginTop: wp(2),
             }}
           >
             Forgot Password?
@@ -119,7 +120,7 @@ function LoginScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
+    padding: wp(4),
   },
 });
 

@@ -6,7 +6,7 @@ import colors from "../../../config/colors";
 import AppTextInput from "../../../components/TextInput";
 import ListItemSeperator from "../../../components/ListItemSeperator";
 import AppButton from "../../../components/Button";
-import { width } from "react-native-dimension";
+import { wp } from "../../../Helpers/Responsiveness";
 
 const Days = [
   { id: 1, title: "Sun" },
@@ -22,20 +22,14 @@ function AvailableScreen(props) {
   const [selection, setSelection] = useState(1);
   return (
     <View style={styles.container}>
-      <ScrollView
-        style={
-          {
-            // flexGrow: 1,
-          }
-        }
-      >
-        <AppText style={{ fontSize: 24, width: 300 }}>
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <AppText style={{ fontSize: wp(6), width: wp(70) }}>
           Select Appointment Slot And Duration
         </AppText>
 
         <View>
           <MaterialCommunityIcons
-            style={{ alignSelf: "flex-end", marginBottom: 20 }}
+            style={{ alignSelf: "flex-end", marginBottom: wp(4) }}
             name="plus-circle-outline"
             size={35}
           />
@@ -49,6 +43,7 @@ function AvailableScreen(props) {
                     ? { backgroundColor: colors.primary }
                     : null,
                 ]}
+                key={day.id}
                 onPress={() => setSelection(day.id)}
               >
                 <AppText
@@ -71,13 +66,13 @@ function AvailableScreen(props) {
           style={{
             flexDirection: "row",
             justifyContent: "space-between",
-            marginVertical: 20,
+            marginVertical: wp(4),
           }}
         >
           <View>
             <AppText>Not Avaible From</AppText>
             <AppTextInput
-              width={width(43)}
+              width={wp(43)}
               style={{ backgroundColor: colors.lightGray }}
               iconName={"clock-outline"}
               iconSize={25}
@@ -86,7 +81,7 @@ function AvailableScreen(props) {
           <View>
             <AppText>To</AppText>
             <AppTextInput
-              width={width(43)}
+              width={wp(43)}
               style={{ backgroundColor: colors.lightGray }}
               iconName={"clock-outline"}
               iconSize={25}
@@ -103,7 +98,7 @@ function AvailableScreen(props) {
           <AppText
             style={{
               textDecorationLine: "underline",
-              paddingVertical: 10,
+              paddingVertical: wp(2),
               textAlign: "right",
             }}
           >
@@ -121,7 +116,7 @@ function AvailableScreen(props) {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 20 },
+  container: { flex: 1, padding: wp(4) },
   btnGroup: {
     flexDirection: "row",
     flexWrap: "wrap",
@@ -129,13 +124,13 @@ const styles = StyleSheet.create({
   btn: {
     width: "23.4%",
     backgroundColor: colors.lightGray,
-    marginEnd: 6,
-    marginBottom: 6,
+    marginEnd: wp(1.2),
+    marginBottom: wp(1.2),
   },
   btnText: {
     textAlign: "center",
-    paddingVertical: 16,
-    fontSize: 14,
+    paddingVertical: wp(3),
+    fontSize: wp(3.5),
   },
 });
 

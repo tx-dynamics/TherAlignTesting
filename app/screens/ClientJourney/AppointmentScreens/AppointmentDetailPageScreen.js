@@ -1,18 +1,20 @@
 import React, { useState } from "react";
-import { Image, StyleSheet, View } from "react-native";
+import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
 import AppText from "../../../components/Text";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import colors from "../../../config/colors";
 import AppButton from "../../../components/Button";
 import CustomModal from "../../../components/CustomModal";
-import { height, totalSize, width } from "react-native-dimension";
+import { hp, wp } from "../../../Helpers/Responsiveness";
+import { useNavigation } from "@react-navigation/native";
+import { ClientRoutes } from "../../../navigation/Routes";
 
 function AppointmentDetailPageScreen() {
   const [modalVisible, setModalVisible] = useState(false);
   return (
     <>
       <View style={styles.container}>
-        <View style={{ paddingHorizontal: 10 }}>
+        <View style={{ paddingHorizontal: wp(2) }}>
           <Header />
         </View>
 
@@ -41,13 +43,13 @@ const Modal = ({ modalVisible, setModalVisible }) => {
     <CustomModal cardBgColor={colors.lightBlue} modalVisible={modalVisible}>
       <View
         style={{
-          padding: 10,
+          paddingVertical: wp(5),
         }}
       >
         <AppText
           style={{
             textAlign: "center",
-            marginBottom: 20,
+            marginBottom: wp(5),
           }}
         >
           You want to cancel your appointment?
@@ -56,16 +58,17 @@ const Modal = ({ modalVisible, setModalVisible }) => {
           style={{
             flexDirection: "row",
             justifyContent: "space-evenly",
+            width: "100%",
           }}
         >
           <AppButton
             title={"Yes"}
-            style={{ marginVertical: 0, paddingHorizontal: 50 }}
+            style={{ marginVertical: 0, paddingHorizontal: wp(10) }}
           />
           <AppButton
             title={"No"}
             onPress={() => setModalVisible(false)}
-            style={{ marginVertical: 0, paddingHorizontal: 50 }}
+            style={{ marginVertical: 0, paddingHorizontal: wp(10) }}
           />
         </View>
       </View>
@@ -85,27 +88,27 @@ const ReschedualeAppointment = () => (
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "center",
-        paddingVertical: height(2),
+        paddingVertical: hp(2),
       }}
     >
       <MaterialCommunityIcons
         name="calendar"
-        size={totalSize(2)}
+        size={wp(6)}
         color={colors.primary}
-        style={{ marginHorizontal: width(2) }}
+        style={{ marginHorizontal: wp(2) }}
       />
       <AppText>Rescheduale Appointment</AppText>
     </View>
 
     <View
-      style={{ backgroundColor: "white", height: height(0.2), width: "100%" }}
+      style={{ backgroundColor: "white", height: hp(0.2), width: "100%" }}
     />
 
     <View
       style={{
         alignItems: "center",
         justifyContent: "center",
-        paddingVertical: height(5),
+        paddingVertical: hp(5),
       }}
     >
       <AppText>Today, Jan 5, 2022</AppText>
@@ -114,33 +117,41 @@ const ReschedualeAppointment = () => (
   </View>
 );
 
-const Header = () => (
-  <View style={{ flexDirection: "row", alignItems: "center" }}>
-    <View style={{ flexDirection: "row", flex: 1, alignItems: "center" }}>
-      <Image
-        source={require("../../../assets/images/dr1.jpg")}
-        style={{ width: width(20), height: height(10), borderRadius: 20 }}
-      />
-      <View style={{ marginHorizontal: width(5) }}>
-        <AppText>Virginia Bailey</AppText>
-        <AppText>Female</AppText>
+const Header = () => {
+  const { navigate } = useNavigation();
+
+  return (
+    <View style={{ flexDirection: "row", alignItems: "center" }}>
+      <View style={{ flexDirection: "row", flex: 1, alignItems: "center" }}>
+        <Image
+          source={require("../../../assets/images/dr1.jpg")}
+          style={{ width: wp(20), height: hp(10), borderRadius: 20 }}
+        />
+        <View style={{ marginHorizontal: wp(5) }}>
+          <AppText>Virginia Bailey</AppText>
+          <AppText>Female</AppText>
+        </View>
       </View>
+      <TouchableOpacity
+        onPress={() => navigate(ClientRoutes.APPOINTMENT_INBOX_SCREEN)}
+      >
+        <Image
+          source={require("../../../assets/images/messanger.png")}
+          resizeMode="contain"
+          style={{
+            width: wp(15),
+            height: hp(10),
+          }}
+        />
+      </TouchableOpacity>
     </View>
-    <Image
-      source={require("../../../assets/images/messanger.png")}
-      resizeMode="contain"
-      style={{
-        width: width(15),
-        height: height(10),
-      }}
-    />
-  </View>
-);
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 0.7,
-    padding: totalSize(1),
+    padding: wp(2),
     justifyContent: "space-between",
   },
 });

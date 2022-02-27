@@ -4,32 +4,31 @@ import AppText from "../../../components/Text";
 import { MaterialCommunityIcons, Entypo } from "@expo/vector-icons";
 import AppTextInput from "../../../components/TextInput";
 import colors from "../../../config/colors";
+import { hp, wp } from "../../../Helpers/Responsiveness";
 
 function InboxScreen({ navigation }) {
-  navigation.setOptions({ tabBarVisible: false });
-
   return (
     <View style={styles.container}>
       <View style={{ justifyContent: "center", alignItems: "center" }}>
         <AppText>9.40 AM</AppText>
-        <View style={{ flexDirection: "row", marginVertical: 30 }}>
+        <View style={{ flexDirection: "row", marginVertical: wp(10) }}>
           <Image
             source={require("../../../assets/images/dr1.jpg")}
             style={{
-              width: 30,
-              height: 30,
+              width: wp(7),
+              height: hp(3.5),
               borderRadius: 10,
               alignSelf: "flex-end",
-              marginEnd: 10,
+              marginEnd: wp(2),
             }}
           />
-          <View>
+          <View style={{ padding: wp(1) }}>
             <AppText
               style={{
                 backgroundColor: "#dceaf4",
                 textAlignVertical: "center",
-                padding: 15,
-                marginTop: 10,
+                padding: wp(3),
+                marginTop: wp(2),
                 borderRadius: 15,
                 borderBottomLeftRadius: 0,
               }}
@@ -40,8 +39,8 @@ function InboxScreen({ navigation }) {
               style={{
                 backgroundColor: "#dceaf4",
                 textAlignVertical: "center",
-                padding: 15,
-                marginTop: 10,
+                padding: wp(3),
+                marginTop: wp(2),
                 borderRadius: 15,
                 borderBottomLeftRadius: 0,
               }}
@@ -53,8 +52,8 @@ function InboxScreen({ navigation }) {
               style={{
                 backgroundColor: "#dceaf4",
                 textAlignVertical: "center",
-                padding: 15,
-                marginTop: 10,
+                padding: wp(3),
+                marginTop: wp(2),
                 borderRadius: 15,
                 borderBottomLeftRadius: 0,
               }}
@@ -71,14 +70,14 @@ function InboxScreen({ navigation }) {
         style={{
           flexDirection: "row",
           alignItems: "center",
-          marginVertical: 40,
+          marginVertical: wp(5),
         }}
       >
         <View
           style={{
             backgroundColor: colors.primary,
-            width: 45,
-            height: 45,
+            width: wp(10),
+            height: hp(5),
             borderRadius: 10,
             justifyContent: "center",
             alignItems: "center",
@@ -86,14 +85,14 @@ function InboxScreen({ navigation }) {
         >
           <Entypo name="attachment" size={25} color={colors.white} />
         </View>
-        <View style={{ flex: 1, marginHorizontal: 20 }}>
-          <AppTextInput />
+        <View style={{ flex: 1, marginHorizontal: wp(4) }}>
+          <AppTextInput handleChangeText={() => {}} />
         </View>
         <View
           style={{
             backgroundColor: colors.primary,
-            width: 45,
-            height: 45,
+            width: wp(10),
+            height: hp(5),
             borderRadius: 10,
             justifyContent: "center",
             alignItems: "center",
@@ -107,7 +106,7 @@ function InboxScreen({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 20, justifyContent: "flex-end" },
+  container: { flex: 1, padding: wp(4), justifyContent: "flex-end" },
 });
 
 export default InboxScreen;

@@ -1,19 +1,13 @@
 import React, { useState, useEffect } from "react";
 import MapView, { Marker } from "react-native-maps";
-import {
-  StyleSheet,
-  View,
-  Dimensions,
-  Image,
-  TouchableOpacity,
-} from "react-native";
+import { StyleSheet, View, Image, TouchableOpacity } from "react-native";
 import * as Location from "expo-location";
 import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
 import AppText from "../../../components/Text";
 import colors from "../../../config/colors";
 import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
-import { height, totalSize, width } from "react-native-dimension";
 import { ClientRoutes } from "../../../navigation/Routes";
+import { hp, wp } from "../../../Helpers/Responsiveness";
 
 export default function MapScreen({ navigation, route }) {
   const [errorMsg, setErrorMsg] = useState(null);
@@ -115,8 +109,9 @@ export default function MapScreen({ navigation, route }) {
           style={{
             position: "absolute",
             zIndex: 1,
-            top: 120,
-            width: width(90),
+            top: wp(35),
+            width: wp(90),
+            justifyContent: "center",
           }}
         >
           {/* Search Icon */}
@@ -161,7 +156,7 @@ export default function MapScreen({ navigation, route }) {
                   borderWidth: 2,
                   borderColor: colors.primary,
                 },
-                textInput: { paddingLeft: 45, height: "100%" },
+                textInput: { paddingLeft: wp(10), height: "100%" },
                 listView: { backgroundColor: "white" },
               }}
               placeholder="Search Therapist, Practice"
@@ -216,11 +211,11 @@ export default function MapScreen({ navigation, route }) {
         <TouchableOpacity
           activeOpacity={0.4}
           style={{
-            width: width(12),
-            height: height(6),
+            width: wp(12),
+            height: wp(12),
             position: "absolute",
-            bottom: height(20),
-            right: width(5),
+            bottom: hp(20),
+            right: wp(5),
             alignItems: "center",
             justifyContent: "center",
             borderRadius: 15,
@@ -250,22 +245,22 @@ export default function MapScreen({ navigation, route }) {
             <>
               <Image
                 style={{
-                  width: width(20),
-                  height: height(12),
+                  width: wp(20),
+                  height: hp(12),
                   borderRadius: 10,
-                  marginHorizontal: 20,
+                  marginHorizontal: wp(4),
                 }}
                 source={therapiDetail.imageURI}
               />
 
               <View>
-                <AppText style={{ fontSize: totalSize(2) }}>
+                <AppText style={{ fontSize: wp(5) }}>
                   {therapiDetail.name}
                 </AppText>
-                <AppText style={{ fontSize: totalSize(2) }}>
+                <AppText style={{ fontSize: wp(4) }}>
                   {therapiDetail.title}
                 </AppText>
-                <AppText style={{ fontSize: totalSize(2) }}>
+                <AppText style={{ fontSize: wp(4) }}>
                   <MaterialCommunityIcons
                     name="star"
                     size={20}
@@ -273,7 +268,7 @@ export default function MapScreen({ navigation, route }) {
                   />{" "}
                   {therapiDetail.rating} ({therapiDetail.review} reviews)
                 </AppText>
-                <AppText style={{ fontSize: totalSize(2) }}>
+                <AppText style={{ fontSize: wp(4) }}>
                   {therapiDetail.address}
                 </AppText>
               </View>
@@ -283,8 +278,8 @@ export default function MapScreen({ navigation, route }) {
                   backgroundColor: "#f23535",
                   borderRadius: 10,
                   alignSelf: "flex-start",
-                  marginVertical: 10,
-                  marginEnd: 20,
+                  marginVertical: wp(4),
+                  marginEnd: wp(4),
                   position: "absolute",
                   right: 0,
                 }}
@@ -307,46 +302,36 @@ export default function MapScreen({ navigation, route }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    position: "relative",
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
-    position: "relative",
   },
   map: {
-    width: width(100),
-    height: height(100),
+    width: wp(100),
+    height: hp(100),
   },
   //   Css
-  input: {
-    flex: 1,
-    padding: 10,
-    borderRadius: 2,
-    borderColor: colors.secondary,
-    borderWidth: 1,
-    paddingLeft: 50,
-    fontSize: 18,
-    backgroundColor: "#fff",
-  },
+
   icon: {
     position: "absolute",
-    // height: "100%",
-    marginHorizontal: 10,
-    marginVertical: 5,
-    justifyContent: "center",
+    top: wp(1.5),
+    marginHorizontal: wp(2),
     zIndex: 2,
   },
 
   modal: {
     position: "absolute",
-    width: width(90),
-    height: height(20),
+    width: wp(90),
+    // height: hp(15),
+    padding: wp(4),
     overflow: "hidden",
     flexDirection: "row",
     alignItems: "center",
-    paddingHorizontal: 10,
+    paddingHorizontal: wp(2),
     backgroundColor: "#fff",
     borderRadius: 30,
-    bottom: 10,
+    bottom: wp(2),
     shadowColor: "#000",
     shadowOffset: {
       width: 0,

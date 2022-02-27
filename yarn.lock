@@ -1055,7 +1055,7 @@
 
 "@callstack/react-theme-provider@^3.0.7":
   version "3.0.7"
-  resolved "https://registry.npmjs.org/@callstack/react-theme-provider/-/react-theme-provider-3.0.7.tgz#b7ce1a53d63ad5e83574b831ae0af6b7c6cc40e7"
+  resolved "https://registry.npmjs.org/@callstack/react-theme-provider/-/react-theme-provider-3.0.7.tgz"
   integrity sha512-Ab6rbD2w4u9W3yf7LQQ8evx9m8fZNsoWxt+MFm3AyZnyKQNCJf4K7ip9tHHZgSs+HTdoj38lEqPehvFOVQKvAg==
   dependencies:
     deepmerge "^3.2.0"
@@ -1254,7 +1254,7 @@
 
 "@mikezzb/react-native-timetable@^0.2.3":
   version "0.2.3"
-  resolved "https://registry.npmjs.org/@mikezzb/react-native-timetable/-/react-native-timetable-0.2.3.tgz#c7ebbaa64e10984b303aa5d38e80c32d8d2e4967"
+  resolved "https://registry.npmjs.org/@mikezzb/react-native-timetable/-/react-native-timetable-0.2.3.tgz"
   integrity sha512-n4QdEHJUb16ObVM2yr9Wl6a0ucOu6ePuY40+Owf01JZq+5Y/AzzSOIFxCm8qkerffBoV5bjxaGnj+qUJxFlo7Q==
 
 "@nodelib/fs.scandir@2.1.5":
@@ -1449,7 +1449,7 @@
 
 "@react-navigation/material-top-tabs@^6.0.6":
   version "6.0.6"
-  resolved "https://registry.npmjs.org/@react-navigation/material-top-tabs/-/material-top-tabs-6.0.6.tgz#efabd409e970c76cac4b9c61ac4d9bf735cf6d39"
+  resolved "https://registry.npmjs.org/@react-navigation/material-top-tabs/-/material-top-tabs-6.0.6.tgz"
   integrity sha512-kbm/0jndRVeGdAgOd4NcDSdSQiYeA7fkctCKbPxe3mT36j9qOqpfHfmd2dbv/VbNCngdTtZ3/+QMxTIViZGy7g==
   dependencies:
     color "^3.1.3"
@@ -4175,7 +4175,7 @@ modal-react-native-web@0.2.0:
   dependencies:
     warning "^4.0.1"
 
-moment@>=2.0.0, moment@^2.22.0, moment@^2.24.0, moment@^2.29.1:
+moment@>=2.0.0, moment@^2.22.0, moment@^2.29.1:
   version "2.29.1"
   resolved "https://registry.npmjs.org/moment/-/moment-2.29.1.tgz"
   integrity sha512-kHmoybcPV8Sqy59DwNDY3Jefr64lK/by/da0ViFcuA4DH0vQg5Q6Ze5VimxkfQNSC+Mls/Kx53s7TjP1RhFEDQ==
@@ -4750,7 +4750,7 @@ react-native-calendar-picker@^7.1.2:
 
 react-native-calendar-strip@^2.2.5:
   version "2.2.5"
-  resolved "https://registry.npmjs.org/react-native-calendar-strip/-/react-native-calendar-strip-2.2.5.tgz#544d41784d93b455a886311de25c0d69935f369a"
+  resolved "https://registry.npmjs.org/react-native-calendar-strip/-/react-native-calendar-strip-2.2.5.tgz"
   integrity sha512-3DmHIJX+Uu9Nv2wNTViPOGBY7rvODaHl7xaaxuqDFTN4sCxeM+1ref8k5RE1PgyZ3Wqs4Z8XJoEyORQIc++VMA==
   dependencies:
     moment ">=2.0.0"
@@ -4781,20 +4781,10 @@ react-native-country-picker-modal@^2.0.0:
 
 react-native-datepicker@^1.7.2:
   version "1.7.2"
-  resolved "https://registry.npmjs.org/react-native-datepicker/-/react-native-datepicker-1.7.2.tgz#58d0822591a0ac9b32aba082650222a0ee29669d"
+  resolved "https://registry.npmjs.org/react-native-datepicker/-/react-native-datepicker-1.7.2.tgz"
   integrity sha1-WNCCJZGgrJsyq6CCZQIioO4pZp0=
   dependencies:
     moment "^2.22.0"
-
-react-native-device-info@^8.4.8:
-  version "8.4.8"
-  resolved "https://registry.npmjs.org/react-native-device-info/-/react-native-device-info-8.4.8.tgz"
-  integrity sha512-92676ZWHZHsPM/EW1ulgb2MuVfjYfMWRTWMbLcrCsipkcMaZ9Traz5mpsnCS7KZpsOksnvUinzDIjsct2XGc6Q==
-
-react-native-dimension@^1.0.6:
-  version "1.0.6"
-  resolved "https://registry.npmjs.org/react-native-dimension/-/react-native-dimension-1.0.6.tgz"
-  integrity sha1-BJ5AdGFgE39eHd6JmDsE/43CiNU=
 
 react-native-gesture-handler@~2.1.0:
   version "2.1.1"
@@ -4825,7 +4815,7 @@ react-native-image-slider-box@^1.1.14:
 
 react-native-iphone-x-helper@^1.3.1:
   version "1.3.1"
-  resolved "https://registry.npmjs.org/react-native-iphone-x-helper/-/react-native-iphone-x-helper-1.3.1.tgz#20c603e9a0e765fd6f97396638bdeb0e5a60b010"
+  resolved "https://registry.npmjs.org/react-native-iphone-x-helper/-/react-native-iphone-x-helper-1.3.1.tgz"
   integrity sha512-HOf0jzRnq2/aFUcdCJ9w9JGzN3gdEg0zFE4FyYlp4jtidqU03D5X7ZegGKfT1EWteR0gPBGp9ye5T5FvSWi9Yg==
 
 react-native-maps@0.29.4:
@@ -4837,12 +4827,12 @@ react-native-maps@0.29.4:
 
 react-native-pager-view@5.4.9:
   version "5.4.9"
-  resolved "https://registry.npmjs.org/react-native-pager-view/-/react-native-pager-view-5.4.9.tgz#c0d40847cfeda5a4e729b53271b0ee0fedff3eb5"
+  resolved "https://registry.npmjs.org/react-native-pager-view/-/react-native-pager-view-5.4.9.tgz"
   integrity sha512-D6tzxpwMGdl6CXgtskGWhKRc5cJakCazESRGt7PkqnpyiH3N35ft1KmR82pCSQetAFlytFiToeu3a/dG5CELvA==
 
 react-native-paper@^4.11.2:
   version "4.11.2"
-  resolved "https://registry.npmjs.org/react-native-paper/-/react-native-paper-4.11.2.tgz#4ae73282da9be3bf20760c609d3273643d1dd4a9"
+  resolved "https://registry.npmjs.org/react-native-paper/-/react-native-paper-4.11.2.tgz"
   integrity sha512-r+M5unY9Avez4we/RijVh4iy8gqxK93R4840aZmbakOJLIuxjfNh3B6SuoxBEbR6diuPRbKVeWHKju4mhltxWw==
   dependencies:
     "@callstack/react-theme-provider" "^3.0.7"
@@ -4885,16 +4875,13 @@ react-native-svg@12.1.1:
 
 react-native-tab-view@^3.1.1:
   version "3.1.1"
-  resolved "https://registry.npmjs.org/react-native-tab-view/-/react-native-tab-view-3.1.1.tgz#1f8d7a835ab4f5b1b1407ec8dddc1053b53fa3c6"
+  resolved "https://registry.npmjs.org/react-native-tab-view/-/react-native-tab-view-3.1.1.tgz"
   integrity sha512-M5pRN6utQfytKWoKlKVzg5NbkYu308qNoW1khGTtEOTs1k14p2dHJ/BWOJoJYHKbPVUyZldbG9MFT7gUl4YHnw==
 
-react-native-timetable@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.npmjs.org/react-native-timetable/-/react-native-timetable-1.0.4.tgz#4a7ec72078340b3b844864900f0f71fe473e4370"
-  integrity sha512-Wz4wBziqrQTyi7yFx03T3gUt7sA1+shAuj91LVH7w81uh9qmVz6M08fx0nJQB465QJxnFUbWvS1Kh46EWUNTPw==
-  dependencies:
-    moment "^2.24.0"
-    prop-types "^15.7.2"
+react-native-table-component@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.npmjs.org/react-native-table-component/-/react-native-table-component-1.2.2.tgz"
+  integrity sha512-7bbsi5431iWcjj3toASh8lFHGi6AG/+MTd4M7GuksXKxx/CFs/Qwv1Ys7D2wgyuYKe3hxWNfSVrteFj0tOYXYw==
 
 react-native-web@0.17.1:
   version "0.17.1"

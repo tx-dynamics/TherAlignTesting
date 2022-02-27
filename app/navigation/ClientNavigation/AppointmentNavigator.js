@@ -6,6 +6,8 @@ import AppointmentScreen from "../../screens/ClientJourney/AppointmentScreens/Ap
 import InboxScreen from "../../screens/ClientJourney/AppointmentScreens/InboxScreen";
 import AppointmentChatScreen from "../../screens/ClientJourney/AppointmentScreens/AppointmentChatScreen";
 import AppointmentDetailPageScreen from "../../screens/ClientJourney/AppointmentScreens/AppointmentDetailPageScreen";
+import { hp, wp } from "../../Helpers/Responsiveness";
+import colors from "../../config/colors";
 
 const Stack = createStackNavigator();
 
@@ -13,20 +15,23 @@ const LeftButton = ({ props }) => (
   <TouchableOpacity activeOpacity={0.5} {...props}>
     <MaterialCommunityIcons
       style={{
-        width: 50,
-        height: 50,
+        width: wp(12),
+        height: wp(12),
+        marginVertical: 7,
         borderRadius: 20,
+        borderWidth: 0.7,
+        borderColor: colors.textGray,
         textAlign: "center",
         textAlignVertical: "center",
-        shadowColor: "#000",
+        shadowColor: "gray",
         shadowOffset: {
           width: 0,
-          height: 3,
+          height: 1,
         },
-        shadowOpacity: 0.27,
-        shadowRadius: 4.65,
+        shadowOpacity: 0.2,
+        shadowRadius: 2.65,
         backgroundColor: "#fff",
-        elevation: 20,
+        elevation: 6,
       }}
       name="arrow-left"
       size={24}
@@ -42,10 +47,10 @@ function AppointmentNavigator(props) {
       screenOptions={{
         headerShown: false,
         headerStyle: {
-          height: 120,
+          height: hp(14),
         },
         headerLeftContainerStyle: {
-          paddingHorizontal: 20,
+          paddingHorizontal: wp(4),
         },
       }}
     >

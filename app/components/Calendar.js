@@ -3,7 +3,7 @@ import { StyleSheet, View } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import colors from "../config/colors";
 import CalendarPicker from "react-native-calendar-picker";
-import { height, totalSize, width } from "react-native-dimension";
+import { wp } from "../Helpers/Responsiveness";
 
 export default class Calendar extends Component {
   constructor(props) {
@@ -47,7 +47,7 @@ export default class Calendar extends Component {
               color={colors.black}
             />
           }
-          width={width(90)}
+          width={wp(90)}
           nextComponent={
             <MaterialCommunityIcons
               name="chevron-right"
@@ -70,7 +70,7 @@ export default class Calendar extends Component {
 const styles = StyleSheet.create({
   container: {
     borderRadius: 10,
-    marginVertical: totalSize(1),
+    marginVertical: wp(1),
     padding: 10,
   },
 });

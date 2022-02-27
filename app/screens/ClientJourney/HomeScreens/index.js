@@ -5,14 +5,13 @@ import FeedbackScreen from "./FeedbackScreen";
 import PaymentPageScreen from "./PaymentPageScreen";
 import SlotSelectingScreen from "./SlotSelectingScreen";
 import TherapistProfileScreen from "./TherapistProfileScreen";
-import { PlanOfCareScreen } from "./PlanOfCare";
-
+import NotificationsScreen from "./NotificationsScreen";
 export {
   MapScreen,
   HomeScreen,
   FeedbackScreen,
-  PlanOfCareScreen,
   PaymentPageScreen,
+  NotificationsScreen,
   SlotSelectingScreen,
   TherapistProfileScreen,
   CalendarAppointmentScreen,

@@ -1,12 +1,11 @@
 import React from "react";
 import { SafeAreaView, View, StyleSheet, StatusBar } from "react-native";
-
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import RadioButtonRN from "radio-buttons-react-native";
 import AppText from "../../../components/Text";
-
 import colors from "../../../config/colors";
 import { AuthRoutes } from "../../../navigation/Routes";
+import { wp } from "../../../Helpers/Responsiveness";
 
 const DATA = [
   { id: 1, label: "Client" },
@@ -19,17 +18,17 @@ const SelectionOfUserScreen = ({ navigation }) => {
     <SafeAreaView style={styles.container}>
       <View
         style={{
-          width: "100%",
           flex: 1,
+          width: "100%",
           justifyContent: "space-evenly",
         }}
       >
         <RadioButtonRN
-          boxStyle={{ flexDirection: "row-reverse", paddingVertical: 20 }}
+          boxStyle={{ flexDirection: "row-reverse", paddingVertical: wp(4) }}
           textStyle={{ justifyContent: "flex-end" }}
           data={DATA}
           initial={1}
-          selectedBtn={(e) => console.log("Selected")}
+          selectedBtn={(e) => console.log("Selected", e)}
           circleSize={18}
           icon={
             <MaterialCommunityIcons
@@ -70,8 +69,8 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     marginTop: StatusBar.currentHeight || 0,
-    padding: 20,
-    paddingBottom: 60,
+    padding: wp(4),
+    paddingBottom: wp(12),
   },
 });
 

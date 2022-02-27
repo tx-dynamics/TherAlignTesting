@@ -3,6 +3,7 @@ import { StyleSheet, View } from "react-native";
 import DatePicker from "react-native-datepicker";
 import colors from "../../config/colors";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { wp } from "../../Helpers/Responsiveness";
 
 const FormDatePicker = () => {
   const [date, setDate] = useState("09-10-2021");
@@ -26,15 +27,15 @@ const FormDatePicker = () => {
             alignItems: "flex-start",
           },
           placeholderText: {
-            fontSize: 17,
+            fontSize: wp(4),
             color: "gray",
           },
           dateText: {
-            fontSize: 17,
+            fontSize: wp(4),
           },
           dateTouchBody: {
             flexDirection: "row-reverse",
-            marginHorizontal: 5,
+            marginHorizontal: wp(1),
           },
         }}
         onDateChange={(date) => {
@@ -42,7 +43,7 @@ const FormDatePicker = () => {
         }}
         iconComponent={
           <MaterialCommunityIcons
-            style={{ marginRight: 4 }}
+            style={{ marginRight: wp(1) }}
             name="calendar"
             size={25}
             color={colors.medium}
@@ -58,10 +59,10 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: colors.lightGray,
     borderRadius: 5,
-    marginBottom: 20,
+    marginBottom: wp(4),
     backgroundColor: "#fff",
     color: "#ddd",
-    padding: 6,
+    padding: wp(1.2),
   },
 
   datePickerStyle: {

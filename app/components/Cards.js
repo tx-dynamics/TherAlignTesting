@@ -4,9 +4,8 @@ import AppText from "./Text";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import CustomModal from "./CustomModal";
 import colors from "../config/colors";
-import { width, totalSize } from "react-native-dimension";
-import { fontSize } from "../config/fonts";
 import moment from "moment";
+import { wp } from "../Helpers/Responsiveness";
 
 function Cards({ Data, calendarDate }) {
   const [modalVisible, setModalVisible] = useState(false);
@@ -45,7 +44,7 @@ const Card = ({ detail, setModalVisible, setCardDetail }) => (
     <AppText
       style={{
         color: "#fff",
-        fontSize: fontSize.small,
+        fontSize: wp(3),
       }}
     >
       {detail.title.toUpperCase()}
@@ -83,11 +82,11 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   card: {
-    width: width(26),
+    width: wp(26),
     padding: 15,
     alignItems: "center",
     justifyContent: "center",
-    marginVertical: totalSize(0.5),
+    marginVertical: wp(0.5),
     marginHorizontal: 3,
     borderRadius: 5,
     flexGrow: 1,

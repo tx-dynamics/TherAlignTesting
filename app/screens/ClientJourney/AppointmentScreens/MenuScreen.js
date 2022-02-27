@@ -4,6 +4,7 @@ import Screen from "../../../components/Screen";
 import AppText from "../../../components/Text";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import ListItemSeperator from "../../../components/ListItemSeperator";
+import { wp } from "../../../Helpers/Responsiveness";
 
 function MenuScreen(props) {
   return (
@@ -23,7 +24,7 @@ function MenuScreen(props) {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 10, paddingVertical: 50 },
+  container: { flex: 1, padding: wp(2), paddingVertical: wp(10) },
 });
 
 export default MenuScreen;

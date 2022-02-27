@@ -4,8 +4,8 @@ import { Dimensions } from "react-native";
 import AppButton from "../../../components/Button";
 import AppText from "../../../components/Text";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { fontSize } from "../../../config/fonts";
 import { AuthRoutes } from "../../../navigation/Routes";
+import { wp } from "../../../Helpers/Responsiveness";
 
 const win = Dimensions.get("window");
 function SuccessfulPasswordChangeScreen({ navigation }) {
@@ -15,11 +15,11 @@ function SuccessfulPasswordChangeScreen({ navigation }) {
         <Image
           style={{
             position: "relative",
-            width: win.width / 2,
-            height: win.width / 2,
+            width: wp(50),
+            height: wp(50),
             resizeMode: "contain",
             alignSelf: "center",
-            marginVertical: 40,
+            marginVertical: wp(8),
           }}
           source={require("../../../assets/images/batch.png")}
         />
@@ -27,8 +27,8 @@ function SuccessfulPasswordChangeScreen({ navigation }) {
           style={{
             position: "absolute",
             backgroundColor: "#fff",
-            width: 80,
-            height: 80,
+            width: wp(16),
+            height: wp(16),
             borderRadius: 40,
             textAlignVertical: "center",
             textAlign: "center",
@@ -42,8 +42,8 @@ function SuccessfulPasswordChangeScreen({ navigation }) {
         <AppText
           style={{
             fontWeight: "700",
-            paddingVertical: 20,
-            fontSize: fontSize.h5,
+            paddingVertical: wp(4),
+            fontSize: wp(6),
           }}
         >
           Congrats!
@@ -51,7 +51,7 @@ function SuccessfulPasswordChangeScreen({ navigation }) {
         <AppText
           style={{
             textAlign: "center",
-            fontSize: fontSize.medium,
+            fontSize: wp(4.5),
           }}
         >
           You have successfully changed the password.
@@ -59,8 +59,8 @@ function SuccessfulPasswordChangeScreen({ navigation }) {
         <AppText
           style={{
             textAlign: "center",
-            fontSize: fontSize.medium,
-            marginBottom: 20,
+            fontSize: wp(4.5),
+            marginBottom: wp(4),
           }}
         >
           Please use the new password when logging in.
@@ -77,7 +77,7 @@ function SuccessfulPasswordChangeScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 10,
+    padding: wp(2),
     justifyContent: "center",
   },
 });

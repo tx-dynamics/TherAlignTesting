@@ -3,8 +3,14 @@ import { View, StyleSheet, TextInput, TouchableOpacity } from "react-native";
 import colors from "../config/colors";
 import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
 import { ClientRoutes } from "../navigation/Routes";
+import { wp } from "../Helpers/Responsiveness";
 
-function SearchField({ navigation, setSearchText, location }) {
+function SearchField({
+  navigation,
+  setSearchText,
+  location,
+  placeholder = "Search Therapist, Practice",
+}) {
   return (
     <View style={styles.container}>
       <View style={styles.icon}>
@@ -12,7 +18,7 @@ function SearchField({ navigation, setSearchText, location }) {
       </View>
       <TextInput
         style={styles.input}
-        placeholder="Search Therapist, Practice"
+        placeholder={placeholder}
         onChangeText={(text) => setSearchText(text)}
       />
 
@@ -56,7 +62,7 @@ const styles = StyleSheet.create({
   },
   map_btn: {
     backgroundColor: "#fff",
-    marginLeft: 10,
+    marginLeft: wp(2),
     width: 50,
     height: 50,
     textAlign: "center",

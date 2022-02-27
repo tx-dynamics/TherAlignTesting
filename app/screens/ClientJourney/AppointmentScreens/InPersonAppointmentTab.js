@@ -12,6 +12,7 @@ import AppTextInput from "../../../components/TextInput";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import colors from "../../../config/colors";
 import { ClientRoutes } from "../../../navigation/Routes";
+import { hp, wp } from "../../../Helpers/Responsiveness";
 
 function InPersonAppointmentTab({ navigation }) {
   return (
@@ -20,8 +21,9 @@ function InPersonAppointmentTab({ navigation }) {
         placeholder="Search Therapist, Practice"
         searchIcon
         iconAlign="left"
+        handleChangeText={() => {}}
       />
-      <ScrollView style={{ marginTop: 20 }}>
+      <ScrollView style={{ marginTop: wp(5) }}>
         <TouchableOpacity
           onPress={() =>
             navigation.navigate(
@@ -45,12 +47,11 @@ const CallCards = (props) => {
       style={{
         backgroundColor: "#DCEAF4",
         width: "100%",
-        padding: 25,
-        paddingHorizontal: 30,
+        padding: wp(6),
         borderRadius: 20,
         flexDirection: "row",
         overflow: "hidden",
-        marginBottom: 20,
+        marginBottom: wp(5),
       }}
     >
       {/* Card Image */}
@@ -58,15 +59,15 @@ const CallCards = (props) => {
         <Image
           source={require("../../../assets/images/dr1.jpg")}
           style={{
-            width: 80,
-            height: 80,
+            width: wp(20),
+            height: hp(9),
             borderRadius: 20,
           }}
         />
         <View
           style={{
-            width: 30,
-            height: 30,
+            width: wp(7),
+            height: hp(3.5),
             borderRadius: 10,
             backgroundColor: "green",
             justifyContent: "center",
@@ -86,8 +87,8 @@ const CallCards = (props) => {
 
       {/* Content */}
 
-      <View style={{ marginHorizontal: 20 }}>
-        <AppText style={{ color: colors.medium, marginVertical: 5 }}>
+      <View style={{ marginHorizontal: wp(5) }}>
+        <AppText style={{ color: colors.medium, marginVertical: wp(1) }}>
           Appointment
         </AppText>
         <AppText>Virginia Bailey</AppText>
@@ -98,7 +99,7 @@ const CallCards = (props) => {
 };
 
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 10 },
+  container: { flex: 1, padding: wp(2) },
 });
 
 export default InPersonAppointmentTab;

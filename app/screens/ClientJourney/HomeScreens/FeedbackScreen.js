@@ -5,6 +5,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import AppTextInput from "../../../components/TextInput";
 import AppButton from "../../../components/Button";
 import ListItemSeperator from "../../../components/ListItemSeperator";
+import { hp, wp } from "../../../Helpers/Responsiveness";
 
 function FeedbackScreen({ route }) {
   const { therapiDetail } = route.params;
@@ -16,13 +17,17 @@ function FeedbackScreen({ route }) {
         <View
           style={{
             flexDirection: "row",
-            // width: 350,
-            padding: 10,
+            padding: wp(2),
           }}
         >
           <Image
             source={therapiDetail.imageURI}
-            style={{ width: 100, height: 120, borderRadius: 10, marginEnd: 15 }}
+            style={{
+              width: wp(25),
+              height: hp(12.5),
+              borderRadius: 10,
+              marginEnd: 15,
+            }}
           />
           <View style={{ width: "65%" }}>
             <AppText>{therapiDetail.name}</AppText>
@@ -38,7 +43,7 @@ function FeedbackScreen({ route }) {
           style={{
             flexDirection: "row",
             justifyContent: "center",
-            marginVertical: 30,
+            marginVertical: wp(8),
           }}
         >
           <MaterialCommunityIcons name="star" size={40} color={"gold"} />
@@ -58,9 +63,10 @@ function FeedbackScreen({ route }) {
 
         <AppTextInput
           placeholder="Write your feedback..."
-          style={{ paddingBottom: 200 }}
+          style={{ paddingBottom: wp(40) }}
+          handleChangeText={() => {}}
         />
-        <View style={{ marginVertical: 30 }}>
+        <View style={{ marginVertical: wp(10) }}>
           <AppButton title={"Add Feedback"} />
         </View>
       </ScrollView>
@@ -69,7 +75,7 @@ function FeedbackScreen({ route }) {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 10 },
+  container: { flex: 1, padding: wp(2) },
 });
 
 export default FeedbackScreen;

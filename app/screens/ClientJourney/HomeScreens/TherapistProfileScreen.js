@@ -5,6 +5,7 @@ import ListItemSeperator from "../../../components/ListItemSeperator";
 import Screen from "../../../components/Screen";
 import AppText from "../../../components/Text";
 import colors from "../../../config/colors";
+import { hp, wp } from "../../../Helpers/Responsiveness";
 import { ClientRoutes } from "../../../navigation/Routes";
 
 function TherapistProfileScreen({ route, navigation }) {
@@ -16,22 +17,22 @@ function TherapistProfileScreen({ route, navigation }) {
       <View style={{ flexDirection: "row", alignItems: "center" }}>
         <Image
           source={therapiDetail.imageURI}
-          style={{ width: 120, height: 130, borderRadius: 10 }}
+          style={{ width: wp(28), height: hp(14), borderRadius: 10 }}
         />
-        <View style={{ marginHorizontal: 20 }}>
+        <View style={{ marginHorizontal: wp(3) }}>
           <AppText>{therapiDetail.name}</AppText>
           <AppText>{therapiDetail.title}</AppText>
           <AppText>***** ({therapiDetail.rating})</AppText>
         </View>
       </View>
       {/* Desctiption */}
-      <View style={{ marginVertical: 10 }}>
+      <View style={{ marginVertical: wp(5) }}>
         <AppButton
           title={"Video appointment"}
           color="#fff"
           textColor="#000"
           borderWidth={1}
-          style={{ borderColor: colors.primary }}
+          style={{ borderColor: colors.primary, marginBottom: wp(4) }}
           onPress={() =>
             navigation.navigate(ClientRoutes.HOME_SLOT_SELECTING_SCREEN)
           }

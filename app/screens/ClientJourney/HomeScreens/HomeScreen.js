@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import {
   View,
   StyleSheet,
   TouchableOpacity,
   ScrollView,
   Image,
+  Animated,
 } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
 import Screen from "../../../components/Screen";
@@ -13,8 +14,7 @@ import colors from "../../../config/colors";
 import SearchField from "../../../components/SearchField";
 import Calendar from "../../../components/Calendar";
 import Cards from "../../../components/Cards";
-import { height, width } from "react-native-dimension";
-import { fontSize } from "../../../config/fonts";
+import { hp, wp } from "../../../Helpers/Responsiveness";
 
 const MoodsList = [
   {
@@ -102,10 +102,15 @@ const TherapistList = [
 function HomeScreen({ navigation }) {
   const [calendarDate, setCalendarDate] = useState();
   const [searchText, setSearchText] = useState("");
+  const [moodDropdownList, setMoodDropdownList] = useState(false);
+
+  useEffect(() => {
+    setMoodDropdownList(false);
+  }, [searchText]);
 
   return (
     <Screen style={styles.container}>
-      <Header />
+      <Header navigation={navigation} />
       <SearchField
         setSearchText={setSearchText}
         location={true}
@@ -120,6 +125,8 @@ function HomeScreen({ navigation }) {
           DescriptionList={DescriptionList}
           calendarDate={calendarDate}
           setCalendarDate={setCalendarDate}
+          moodDropdownList={moodDropdownList}
+          setMoodDropdownList={setMoodDropdownList}
         />
       )}
     </Screen>
@@ -131,30 +138,60 @@ const HomeView = ({
   DescriptionList,
   calendarDate,
   setCalendarDate,
-}) => (
-  <ScrollView showsVerticalScrollIndicator={false}>
-    <View>
-      <AppText>Set your daily mood</AppText>
-      <View style={{ marginVertical: height(1) }}>
-        <HorizontalColorfulCardList Data={MoodsList} />
+  moodDropdownList,
+  setMoodDropdownList,
+}) => {
+  // fadeAnim will be used as the value for opacity. Initial Value: 0
+  const fadeAnim = useRef(new Animated.Value(0)).current;
+
+  const fadeIn = () => {
+    // Will change fadeAnim value to 1 in 5 seconds
+    Animated.timing(fadeAnim, {
+      toValue: 1,
+      duration: 500,
+      useNativeDriver: true,
+    }).start();
+  };
+
+  return (
+    <ScrollView showsVerticalScrollIndicator={false}>
+      <View>
+        <AppText>Set your daily mood</AppText>
+        <View style={{ marginVertical: hp(2) }}>
+          <HorizontalColorfulCards
+            Data={MoodsList}
+            setMoodDropdownList={setMoodDropdownList}
+            fadeAnim={fadeIn}
+          />
+        </View>
       </View>
-    </View>
-    <Cards Data={DescriptionList} calendarDate={calendarDate} />
-    <Calendar setCalendarDate={setCalendarDate} />
-  </ScrollView>
-);
+      <Animated.View
+        style={[
+          moodDropdownList ? null : { display: "none" },
+          { opacity: fadeAnim },
+        ]}
+      >
+        <Cards Data={DescriptionList} calendarDate={calendarDate} />
+      </Animated.View>
+      <Calendar setCalendarDate={setCalendarDate} />
+    </ScrollView>
+  );
+};
 
 const SearchView = ({ TherapistList }) => (
   <ScrollView>
     {TherapistList.map((therapi) => (
-      <View key={therapi.id} style={{ flexDirection: "row", marginBottom: 15 }}>
+      <View
+        key={therapi.id}
+        style={{ flexDirection: "row", marginBottom: wp(4) }}
+      >
         <Image
           source={therapi.imageUri}
           style={{
-            width: 80,
-            height: 80,
+            width: wp(20),
+            height: hp(10),
             borderRadius: 10,
-            marginEnd: 15,
+            marginEnd: wp(3),
           }}
         />
         <View>
@@ -171,24 +208,31 @@ const SearchView = ({ TherapistList }) => (
 
 // Start Header
 
-const Header = () => (
+const Header = ({ navigation }) => (
   <View style={styles.header}>
     <View style={styles.header_text}>
       <View style={{ flexDirection: "row" }}>
         <AppText
-          style={{ color: colors.primary, fontSize: 28, fontWeight: "700" }}
+          style={{
+            color: colors.primary,
+            fontSize: wp(6.5),
+            fontWeight: "700",
+          }}
         >
           Quote{" "}
         </AppText>
-        <AppText style={{ color: colors.secondary, fontSize: 28 }}>
+        <AppText style={{ color: colors.secondary, fontSize: wp(6.5) }}>
           of the day
         </AppText>
       </View>
-      <AppText style={{ fontSize: 17 }}>
+      <AppText style={{ fontSize: wp(4.3) }}>
         "We cannot change anything until we accept it."
       </AppText>
     </View>
-    <TouchableOpacity style={styles.bell_container}>
+    <TouchableOpacity
+      style={styles.bell_container}
+      onPress={() => navigation.navigate("NotificationScreen")}
+    >
       <FontAwesome
         style={styles.bell_icon}
         name="bell-o"
@@ -203,7 +247,7 @@ const Header = () => (
 
 // Start Daily Moods
 
-function HorizontalColorfulCardList({ Data }) {
+function HorizontalColorfulCards({ Data, setMoodDropdownList, fadeAnim }) {
   const [List, setList] = useState(Data);
 
   const handleBackgroundColor = (item) => {
@@ -222,19 +266,29 @@ function HorizontalColorfulCardList({ Data }) {
 
   return (
     <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-      <Moods List={List} onChangeBackground={handleBackgroundColor} />
+      <MoodCards
+        List={List}
+        onChangeBackground={handleBackgroundColor}
+        setMoodDropdownList={setMoodDropdownList}
+        fadeAnim={fadeAnim}
+      />
     </ScrollView>
   );
 }
 
-const Moods = ({ List, onChangeBackground }) => (
+const MoodCards = ({
+  List,
+  onChangeBackground,
+  setMoodDropdownList,
+  fadeAnim,
+}) => (
   <View style={styles.moods}>
     {List.map((item, key) => (
       <TouchableOpacity
         key={key}
         style={{
-          width: width(16.6),
-          height: height(9),
+          width: wp(16.6),
+          height: hp(9),
           alignItems: "center",
           justifyContent: "center",
           borderWidth: 1,
@@ -242,17 +296,19 @@ const Moods = ({ List, onChangeBackground }) => (
           borderColor: item.borderColor,
           backgroundColor: item.backgroundcolor,
           borderRadius: 5,
-          marginHorizontal: width(0.8),
+          marginHorizontal: wp(0.8),
         }}
         onPress={() => {
+          fadeAnim();
           onChangeBackground(item);
+          setMoodDropdownList(true);
           console.log(item);
         }}
       >
         <AppText
           style={{
             fontWeight: "700",
-            fontSize: fontSize.regular,
+            fontSize: wp(3),
             color: item.backgroundcolor === "#fff" ? "#000" : "#fff",
           }}
         >
@@ -268,15 +324,15 @@ const Moods = ({ List, onChangeBackground }) => (
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 10,
-    paddingBottom: 3,
+    padding: wp(2),
+    paddingBottom: wp(0),
   },
   header: {
     flexDirection: "row",
     justifyContent: "space-between",
   },
   header_text: {
-    width: width(55),
+    width: wp(55),
   },
   bell_container: {
     shadowColor: "#171717",
@@ -284,11 +340,11 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.2,
     shadowRadius: 3,
     elevation: 10,
-    width: 50,
-    height: 50,
+    width: wp(12),
+    height: hp(5.5),
     borderRadius: 20,
     overflow: "hidden",
-    marginVertical: 10,
+    marginVertical: wp(2),
   },
   bell_icon: {
     height: "100%",

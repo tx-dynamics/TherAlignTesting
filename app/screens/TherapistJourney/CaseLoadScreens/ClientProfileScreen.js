@@ -4,8 +4,9 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import AppText from "../../../components/Text";
 import colors from "../../../config/colors";
 import AppButton from "../../../components/Button";
+import { wp } from "../../../Helpers/Responsiveness";
 
-function ClientProfileScreen(props) {
+function ClientProfileScreen({ navigation }) {
   return (
     <View style={styles.container}>
       {/* Header */}
@@ -19,18 +20,25 @@ function ClientProfileScreen(props) {
         <View style={{ flexDirection: "row", alignItems: "center" }}>
           <Image
             source={require("../../../assets/images/dr1.jpg")}
-            style={{ width: 80, height: 90, marginRight: 10, borderRadius: 10 }}
+            style={{
+              width: wp(20),
+              height: wp(20),
+              marginRight: wp(2),
+              borderRadius: 10,
+            }}
           />
           <AppText style={{ fontWeight: "700" }}>Clara</AppText>
         </View>
-        <Image
-          source={require("../../../assets/images/messanger.png")}
-          style={{
-            width: 70,
-            height: 70,
-            resizeMode: "contain",
-          }}
-        />
+        <TouchableOpacity onPress={() => navigation.navigate("ClientInbox")}>
+          <Image
+            source={require("../../../assets/images/messanger.png")}
+            style={{
+              width: wp(15),
+              height: wp(15),
+              resizeMode: "contain",
+            }}
+          />
+        </TouchableOpacity>
       </View>
       {/* Client Appointment History */}
 
@@ -38,15 +46,17 @@ function ClientProfileScreen(props) {
         style={{
           flexDirection: "row",
           justifyContent: "space-between",
-          padding: 20,
-          paddingVertical: 35,
+          padding: wp(4),
+          paddingVertical: wp(8),
           backgroundColor: colors.lightGray,
           borderRadius: 20,
-          marginVertical: 20,
+          marginVertical: wp(4),
         }}
       >
         <AppText>Clear Appointment History</AppText>
-        <TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => navigation.navigate("ClientAppointment")}
+        >
           <AppText>View</AppText>
         </TouchableOpacity>
       </View>
@@ -56,36 +66,40 @@ function ClientProfileScreen(props) {
       <View
         style={{
           alignItems: "center",
-          paddingVertical: 50,
+          paddingVertical: wp(10),
           backgroundColor: colors.lightGray,
           borderRadius: 20,
         }}
       >
         <AppText>Client Mood Calendar</AppText>
-        <View style={{ flexDirection: "row", paddingTop: 10 }}>
-          <TouchableOpacity>
+        <TouchableOpacity
+          style={{ flexDirection: "row", paddingTop: wp(2) }}
+          onPress={() => navigation.navigate("MoodCalendar")}
+        >
+          <View>
             <MaterialCommunityIcons
               name="calendar"
               size={25}
               color={colors.primary}
             />
-          </TouchableOpacity>
+          </View>
           <AppText>03 Nov 2021</AppText>
-          <TouchableOpacity>
+          <View>
             <MaterialCommunityIcons name="chevron-down" size={25} />
-          </TouchableOpacity>
-        </View>
+          </View>
+        </TouchableOpacity>
       </View>
 
       {/* Button */}
 
-      <View style={{ marginTop: 20 }}>
+      <View style={{ marginTop: wp(4) }}>
         <AppButton
           title={"Plan of care"}
           borderWidth={1}
           color="white"
           textColor={colors.black}
-          style={{ borderColor: colors.primary }}
+          style={{ borderColor: colors.primary, marginBottom: wp(3) }}
+          onPress={() => navigation.navigate("PlanOfCare")}
         />
         <AppButton
           title={"Treatment Plan"}
@@ -93,6 +107,7 @@ function ClientProfileScreen(props) {
           color="white"
           textColor={colors.black}
           style={{ borderColor: colors.primary }}
+          onPress={() => navigation.navigate("TreatmentPlan")}
         />
       </View>
     </View>
@@ -100,7 +115,7 @@ function ClientProfileScreen(props) {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 20 },
+  container: { flex: 1, padding: wp(4) },
 });
 
 export default ClientProfileScreen;

@@ -2,8 +2,9 @@ import React, { useState, useRef } from "react";
 import { View, Text, Alert, StyleSheet, Pressable } from "react-native";
 import PhoneInput from "react-native-phone-number-input";
 import colors from "../../config/colors";
+import { wp } from "../../Helpers/Responsiveness";
 
-const App = () => {
+const PhonePickerField = () => {
   const [phoneNumber, setphoneNumber] = useState("");
   const phoneInput = useRef(null);
   const buttonPress = () => {
@@ -36,7 +37,7 @@ const styles = StyleSheet.create({
   phoneContainer: {
     elevation: 0,
     width: "100%",
-    height: 50,
+    height: wp(12),
   },
 
   textInput: {
@@ -45,4 +46,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+export default PhonePickerField;

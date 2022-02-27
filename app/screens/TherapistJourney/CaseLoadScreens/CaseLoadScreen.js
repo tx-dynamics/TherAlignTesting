@@ -1,5 +1,5 @@
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
-import AppText from "../../../components/Text";
+import colors from "../../../config/colors";
 import InPersonCaseLoadTab from "./InPersonCaseLoadTab";
 import OnlineConsultencyCaseLoadTab from "./OnlineConsultencyCaseLoadTab";
 
@@ -7,7 +7,7 @@ const Tab = createMaterialTopTabNavigator();
 
 function CaseLoadScreen() {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator screenOptions={{ tabBarPressColor: colors.secondary }}>
       <Tab.Screen
         name="OnlineConsultencyTab"
         component={OnlineConsultencyCaseLoadTab}

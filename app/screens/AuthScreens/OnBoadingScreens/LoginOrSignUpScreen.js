@@ -4,8 +4,8 @@ import AppButton from "../../../components/Button";
 import AppText from "../../../components/Text";
 import colors from "../../../config/colors";
 import { SliderBox } from "react-native-image-slider-box";
-import { height } from "react-native-dimension";
 import { AuthRoutes } from "../../../navigation/Routes";
+import { hp, wp } from "../../../Helpers/Responsiveness";
 
 const images = [
   require("../../../assets/images/Discussion-cuate.png"),
@@ -22,7 +22,7 @@ function LoginOrSignUpScreen({ navigation }) {
 
       <View
         style={{
-          height: height(30),
+          height: hp(30),
           justifyContent: "space-evenly",
           alignItems: "center",
         }}
@@ -32,7 +32,7 @@ function LoginOrSignUpScreen({ navigation }) {
             title="Log In"
             onPress={() => navigation.navigate(AuthRoutes.LOGIN_SCREEN)}
           />
-          <View style={{ marginHorizontal: 15 }} />
+          <View style={{ marginHorizontal: wp(2.5) }} />
           <AppButton
             title="Sign Up"
             color={colors.white}
@@ -58,7 +58,7 @@ const ImageSlider = ({ images }) => (
     autoplay={true}
     disableOnPress={true}
     circleLoop
-    sliderBoxHeight={height(70)}
+    sliderBoxHeight={hp(70)}
     dotStyle={{
       display: "none",
     }}

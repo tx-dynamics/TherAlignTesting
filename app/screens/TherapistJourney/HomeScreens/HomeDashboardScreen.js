@@ -1,53 +1,70 @@
 import React, { useState } from "react";
-import { View, StyleSheet, TouchableOpacity, Image } from "react-native";
+import {
+  View,
+  StyleSheet,
+  TouchableOpacity,
+  Image,
+  ScrollView,
+} from "react-native";
 import { FontAwesome, MaterialCommunityIcons } from "@expo/vector-icons";
 import AppText from "../../../components/Text";
 import colors from "../../../config/colors";
 import Screen from "../../../components/Screen";
 import SearchField from "../../../components/SearchField";
 import AppButton from "../../../components/Button";
+import { wp } from "../../../Helpers/Responsiveness";
 
 function HomeDashboard({ navigation }) {
   const [searchText, setSearchText] = useState("");
 
   return (
     <Screen style={styles.container}>
-      <Header />
+      <Header navigation={navigation} />
       <SearchField setSearchText={setSearchText} navigation={navigation} />
-      <View
-        style={{
-          justifyContent: "center",
-          alignItems: "center",
-          backgroundColor: colors.lightGray,
-          padding: 50,
-          borderRadius: 20,
-        }}
-      >
-        <AppText>View Client Appointment</AppText>
+
+      <ScrollView showsVerticalScrollIndicator={false}>
         <View
           style={{
-            flexDirection: "row",
             justifyContent: "center",
-            top: 10,
+            alignItems: "center",
+            backgroundColor: colors.lightGray,
+            padding: wp(10),
+            borderRadius: 20,
           }}
         >
-          <MaterialCommunityIcons
-            name="calendar"
-            size={25}
-            color={colors.primary}
-          />
-          <AppText>4 Nov 2021</AppText>
+          <AppText>View Client Appointment</AppText>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("ClientAppointment")}
+          >
+            <View
+              style={{
+                flexDirection: "row",
+                width: "100%",
+                marginTop: wp(2),
+              }}
+            >
+              <MaterialCommunityIcons
+                name="calendar"
+                size={25}
+                color={colors.primary}
+              />
+              <AppText style={{ marginLeft: wp(2) }}>4 Nov 2021</AppText>
+            </View>
+          </TouchableOpacity>
         </View>
-      </View>
 
-      {/* Today consultation */}
-      <View style={{ marginTop: 20 }}>
-        <AppText>(2) Today Consultation</AppText>
-        <ConsultationCard />
-        <ConsultationCard />
-      </View>
+        {/* Today consultation */}
+        <View style={{ marginTop: wp(4) }}>
+          <AppText>(2) Today Consultation</AppText>
+          <ConsultationCard />
+          <ConsultationCard />
+        </View>
 
-      <AppButton title={"Set Your Availability"} />
+        <AppButton
+          title={"Set Your Availability"}
+          onPress={() => navigation.navigate("Available")}
+        />
+      </ScrollView>
     </Screen>
   );
 }
@@ -59,24 +76,24 @@ const ConsultationCard = () => (
       justifyContent: "center",
       alignItems: "center",
       backgroundColor: colors.lightBlue,
-      padding: 40,
+      padding: wp(8),
       borderRadius: 20,
-      marginBottom: 20,
+      marginBottom: wp(4),
     }}
   >
     <View>
       <Image
         source={require("../../../assets/images/dr1.jpg")}
-        style={{ width: 70, height: 70, borderRadius: 10 }}
+        style={{ width: wp(20), height: wp(20), borderRadius: 10 }}
       />
       <MaterialCommunityIcons
         name="video"
-        size={25}
+        size={20}
         color={colors.white}
         style={{
           backgroundColor: "green",
-          height: 30,
-          width: 30,
+          width: wp(7),
+          height: wp(7),
           borderRadius: 10,
           textAlign: "center",
           textAlignVertical: "center",
@@ -86,8 +103,8 @@ const ConsultationCard = () => (
         }}
       />
     </View>
-    <View style={{ marginHorizontal: 30 }}>
-      <AppText style={{ marginBottom: 15, color: colors.textGray }}>
+    <View style={{ marginHorizontal: wp(5) }}>
+      <AppText style={{ marginBottom: wp(3), color: colors.textGray }}>
         Video Call
       </AppText>
       <AppText>Virgenia Bailey</AppText>
@@ -97,24 +114,31 @@ const ConsultationCard = () => (
 );
 
 // Header
-const Header = () => (
+const Header = ({ navigation }) => (
   <View style={styles.header}>
     <View style={styles.header_text}>
       <View style={{ flexDirection: "row" }}>
         <AppText
-          style={{ color: colors.primary, fontSize: 28, fontWeight: "700" }}
+          style={{
+            color: colors.primary,
+            fontSize: wp(6.4),
+            fontWeight: "700",
+          }}
         >
           Quote{" "}
         </AppText>
-        <AppText style={{ color: colors.secondary, fontSize: 28 }}>
+        <AppText style={{ color: colors.secondary, fontSize: wp(6.5) }}>
           of the day
         </AppText>
       </View>
-      <AppText style={{ fontSize: 17 }}>
+      <AppText style={{ fontSize: wp(4) }}>
         "We cannot change anything until we accept it."
       </AppText>
     </View>
-    <TouchableOpacity style={styles.bell_container}>
+    <TouchableOpacity
+      style={styles.bell_container}
+      onPress={() => navigation.navigate("Notifications")}
+    >
       <FontAwesome
         style={styles.bell_icon}
         name="bell-o"

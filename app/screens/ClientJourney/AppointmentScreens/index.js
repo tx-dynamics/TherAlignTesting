@@ -4,7 +4,7 @@ import AppointmentScreen from "./AppointmentScreen";
 import InboxScreen from "./InboxScreen";
 import InPersonAppointmentTab from "./InPersonAppointmentTab";
 import MenuScreen from "./MenuScreen";
-import NotificationsScreen from "./NotificationsScreen";
+import NotificationsScreen from "../HomeScreens/NotificationsScreen";
 import OnlineConsultencyAppointmentTab from "./OnlineConsultencyAppointmentTab";
 import PracticeChatTab from "./PracticeChatTab";
 import TherapistChatTab from "./TherapistChatTab";

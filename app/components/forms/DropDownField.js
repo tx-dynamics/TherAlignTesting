@@ -1,8 +1,8 @@
 import SelectDropdown from "react-native-select-dropdown";
-
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { useState } from "react";
 import colors from "../../config/colors";
+import { wp } from "../../Helpers/Responsiveness";
 
 export const DropDownField = ({ data, width = "100%", defaultButtonText }) => {
   const [menuData, setMenuData] = useState(data);
@@ -33,7 +33,7 @@ export const DropDownField = ({ data, width = "100%", defaultButtonText }) => {
         backgroundColor: colors.white,
         borderWidth: 1,
         borderColor: colors.lightGray,
-        marginBottom: 20,
+        marginBottom: wp(4),
       }}
     />
   );
