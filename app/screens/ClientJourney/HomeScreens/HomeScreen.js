@@ -173,7 +173,9 @@ const HomeView = ({
       >
         <Cards Data={DescriptionList} calendarDate={calendarDate} />
       </Animated.View>
-      <Calendar setCalendarDate={setCalendarDate} />
+      <View style={{ marginVertical: wp(2) }}>
+        <Calendar setCalendarDate={setCalendarDate} />
+      </View>
     </ScrollView>
   );
 };
@@ -215,13 +217,13 @@ const Header = ({ navigation }) => (
         <AppText
           style={{
             color: colors.primary,
-            fontSize: wp(6.5),
+            fontSize: wp(5),
             fontWeight: "700",
           }}
         >
           Quote{" "}
         </AppText>
-        <AppText style={{ color: colors.secondary, fontSize: wp(6.5) }}>
+        <AppText style={{ color: colors.secondary, fontSize: wp(5) }}>
           of the day
         </AppText>
       </View>
@@ -302,7 +304,7 @@ const MoodCards = ({
           fadeAnim();
           onChangeBackground(item);
           setMoodDropdownList(true);
-          console.log(item);
+          // console.log(item);
         }}
       >
         <AppText
@@ -341,8 +343,8 @@ const styles = StyleSheet.create({
     shadowRadius: 3,
     elevation: 10,
     width: wp(12),
-    height: hp(5.5),
-    borderRadius: 20,
+    height: wp(12),
+    borderRadius: wp(5),
     overflow: "hidden",
     marginVertical: wp(2),
   },

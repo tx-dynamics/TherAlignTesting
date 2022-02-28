@@ -57,7 +57,7 @@ function ClientProfileScreen({ navigation }) {
         <TouchableOpacity
           onPress={() => navigation.navigate("ClientAppointment")}
         >
-          <AppText>View</AppText>
+          <AppText style={{ textDecorationLine: "underline" }}>View</AppText>
         </TouchableOpacity>
       </View>
 

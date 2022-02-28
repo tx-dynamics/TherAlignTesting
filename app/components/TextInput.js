@@ -11,6 +11,7 @@ import { MaterialCommunityIcons, MaterialIcons } from "@expo/vector-icons";
 
 import defaultStyles from "../config/styles";
 import colors from "../config/colors";
+import { wp } from "../Helpers/Responsiveness";
 
 const FadeInView = (props) => {
   const fadeAnim = useRef(new Animated.Value(0)).current; // Initial value for opacity: 0
@@ -110,7 +111,7 @@ function AppTextInput({
         <View>
           <MaterialIcons
             name={"search"}
-            size={30}
+            size={wp(7)}
             color={defaultStyles.colors.medium}
             onPress={() => console.log("Search")}
           />
@@ -137,9 +138,7 @@ const styles = StyleSheet.create({
     borderColor: defaultStyles.colors.lightGray,
     flexDirection: "row",
     borderRadius: 5,
-    padding: 12,
-    // marginVertical: 10,
-    // marginBottom: 20,
+    padding: wp(2.5),
     backgroundColor: "#fff",
     color: "#ddd",
   },

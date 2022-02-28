@@ -28,7 +28,7 @@ const SelectionOfUserScreen = ({ navigation }) => {
           textStyle={{ justifyContent: "flex-end" }}
           data={DATA}
           initial={1}
-          selectedBtn={(e) => console.log("Selected", e)}
+          selectedBtn={(e) => {}}
           circleSize={18}
           icon={
             <MaterialCommunityIcons

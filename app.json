@@ -17,12 +17,12 @@
       "**/*"
     ],
     "ios": {
-      "bundleIdentifier": "com.task1.therapistApp",
+      "bundleIdentifier": "com.devAli.TherAlignApp",
       "buildNumber": "1.0.0"
     },
    
     "android": {
-      "package": "com.task1.therapistApp",
+      "package": "com.devAli.TherAlignApp",
       "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./app/assets/adaptive-icon.png",

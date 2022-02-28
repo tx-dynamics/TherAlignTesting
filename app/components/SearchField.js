@@ -29,7 +29,7 @@ function SearchField({
           <MaterialCommunityIcons
             style={styles.map_btn}
             name="map-marker"
-            size={30}
+            size={25}
             color={colors.primary}
           />
         </TouchableOpacity>
@@ -41,7 +41,7 @@ function SearchField({
 const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
-    marginVertical: 25,
+    marginVertical: wp(4.5),
   },
   input: {
     position: "relative",
@@ -49,22 +49,22 @@ const styles = StyleSheet.create({
     borderRadius: 2,
     borderColor: colors.dark,
     borderWidth: 0.2,
-    padding: 10,
-    paddingLeft: 50,
-    fontSize: 18,
+    padding: wp(2),
+    paddingLeft: wp(10),
+    fontSize: wp(4),
   },
   icon: {
     position: "absolute",
     height: "100%",
-    marginHorizontal: 10,
+    marginHorizontal: wp(2),
     justifyContent: "center",
     zIndex: 1,
   },
   map_btn: {
+    flex: 1,
     backgroundColor: "#fff",
+    padding: wp(2.5),
     marginLeft: wp(2),
-    width: 50,
-    height: 50,
     textAlign: "center",
     textAlignVertical: "center",
     borderRadius: 2,

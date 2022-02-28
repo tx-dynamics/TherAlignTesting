@@ -62,6 +62,7 @@ function MenuNavigator(props) {
         options={{
           headerShown: true,
           headerTitle: "",
+          headerLeft: () => {},
         }}
         name="MenuScreen"
         component={MenuScreen}

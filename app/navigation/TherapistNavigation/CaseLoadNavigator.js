@@ -64,7 +64,11 @@ function CaseLoadNavigator(props) {
       <Stack.Screen
         name="CaseLoadScreen"
         component={CaseLoadScreen}
-        options={{ headerShown: true, headerTitle: "Case Load" }}
+        options={{
+          headerShown: true,
+          headerLeft: () => {},
+          headerTitle: "Case Load",
+        }}
       />
 
       <Stack.Screen

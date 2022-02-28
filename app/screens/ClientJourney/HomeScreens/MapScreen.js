@@ -9,6 +9,8 @@ import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplet
 import { ClientRoutes } from "../../../navigation/Routes";
 import { hp, wp } from "../../../Helpers/Responsiveness";
 
+const GOOGLE_API_KEY = "";
+
 export default function MapScreen({ navigation, route }) {
   const [errorMsg, setErrorMsg] = useState(null);
   const [showModal, setShowModal] = useState(false);
@@ -159,7 +161,7 @@ export default function MapScreen({ navigation, route }) {
                 textInput: { paddingLeft: wp(10), height: "100%" },
                 listView: { backgroundColor: "white" },
               }}
-              placeholder="Search Therapist, Practice"
+              placeholder="Search Therapist, Practice..."
             />
           </View>
         </View>
@@ -178,12 +180,12 @@ export default function MapScreen({ navigation, route }) {
           }
           style={styles.map}
         >
-          <Marker
+          {/* <Marker
             coordinate={{
               latitude: region.latitude,
               longitude: region.longitude,
             }}
-          />
+          /> */}
           {therapist.map((therapi) => (
             <Marker
               key={therapi.id}

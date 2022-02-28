@@ -7,7 +7,10 @@ import CalendarAppointmentScreen from "./CalendarAppointmentScreen";
 function TherapistDetailScreen({ route }) {
   const { detail } = route.params;
   return (
-    <View style={styles.container}>
+    <ScrollView
+      showsVerticalScrollIndicator={false}
+      contentContainerStyle={styles.container}
+    >
       <View
         style={{
           flexDirection: "row",
@@ -42,17 +45,17 @@ function TherapistDetailScreen({ route }) {
         <AppText style={{ textAlign: "center", fontSize: wp(5) }}>
           Booked Appointments
         </AppText>
-        <ScrollView showsVerticalScrollIndicator={false}>
+        <View style={{ flex: 1 }}>
           <CalendarAppointmentScreen />
-        </ScrollView>
+        </View>
       </View>
-    </View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flexGrow: 1,
     padding: wp(4),
   },
 });

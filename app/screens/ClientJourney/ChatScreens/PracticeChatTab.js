@@ -37,7 +37,12 @@ const messages = [
 function PracticeChatTab({ navigation }) {
   return (
     <View style={styles.container}>
-      <AppTextInput searchIcon placeholder="Search Practice" iconAlign="left" />
+      <AppTextInput
+        searchIcon
+        placeholder="Search Practice"
+        iconAlign="left"
+        handleChangeText={() => {}}
+      />
 
       <ScrollView style={{ marginVertical: 20 }}>
         {messages.map((message) => (

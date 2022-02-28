@@ -1,6 +1,6 @@
 import React from "react";
 import CalendarStrip from "react-native-calendar-strip";
-import { View } from "react-native";
+import { ScrollView, View } from "react-native";
 import AppText from "../../../components/Text";
 // import TimeTable from "@mikezzb/react-native-timetable";
 import colors from "../../../config/colors";
@@ -17,7 +17,7 @@ const TimeTableData = [
 
 const CalendarAppointmentScreen = () => {
   return (
-    <View style={{ flex: 1, padding: wp(2) }}>
+    <ScrollView contentContainerStyle={{ flex: 1, padding: wp(3) }}>
       <CalendarStrip
         // scrollable
         style={{ height: hp(10), paddingBottom: wp(2) }}
@@ -26,8 +26,7 @@ const CalendarAppointmentScreen = () => {
           fontSize: wp(4),
           textDecorationLine: "underline",
         }}
-        dateNumberStyle={{ color: "gray", fontSize: wp(4) }}
-        dateNameStyle={{ color: "#000", fontSize: wp(4) }}
+        dateNameStyle={{ color: "#000", fontSize: wp(3) }}
         iconContainer={{ flex: 0.1 }}
         highlightDateNameStyle={{ color: colors.primary, fontSize: wp(4) }}
         highlightDateNumberStyle={{ color: colors.primary, fontSize: wp(4) }}
@@ -45,7 +44,7 @@ const CalendarAppointmentScreen = () => {
       />
 
       <TimeTable />
-    </View>
+    </ScrollView>
   );
 };
 

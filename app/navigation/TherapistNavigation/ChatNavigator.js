@@ -60,6 +60,7 @@ function ChatNavigator(props) {
         options={{
           headerShown: true,
           headerTitle: "",
+          headerLeft: () => {},
           headerStyle: { height: hp(14) },
         }}
         name="ChatScreen"

@@ -60,6 +60,7 @@ function AccountNavigator(props) {
         options={{
           headerShown: true,
           headerTitle: "",
+          headerLeft: () => {},
         }}
         name="AccountScreen"
         component={AccountScreen}

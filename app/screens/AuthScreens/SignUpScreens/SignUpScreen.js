@@ -1,7 +1,6 @@
 import React from "react";
 import { View, StyleSheet, ScrollView } from "react-native";
 import AppText from "../../../components/Text";
-
 import colors from "../../../config/colors";
 import AppButton from "../../../components/Button";
 import { Formik } from "formik";

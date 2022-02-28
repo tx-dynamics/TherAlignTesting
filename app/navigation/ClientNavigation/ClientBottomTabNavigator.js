@@ -23,10 +23,6 @@ export default function ClientBottomTabNavigator({ setUser }) {
             height: hp(10),
           },
           tabBarHideOnKeyboard: true,
-          tabBarBadgeStyle: {
-            top: wp(3),
-            fontSize: wp(3),
-          },
           tabBarLabelStyle: { bottom: wp(4) },
           tabBarActiveTintColor: colors.primary,
         }}
@@ -82,6 +78,7 @@ export default function ClientBottomTabNavigator({ setUser }) {
         <Tab.Screen
           options={{
             tabBarBadge: 2,
+            tabBarBadgeStyle: { position: "absolute", top: 12 },
             tabBarIcon: ({ color, size, focused }) => (
               <MaterialIcons
                 name="chat"

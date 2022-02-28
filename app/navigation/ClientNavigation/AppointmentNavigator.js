@@ -57,7 +57,11 @@ function AppointmentNavigator(props) {
       <Stack.Screen
         name="ApointmentScreen"
         component={AppointmentScreen}
-        options={{ headerShown: true, headerTitle: "Appointments" }}
+        options={{
+          headerShown: true,
+          headerLeft: () => {},
+          headerTitle: "Appointments",
+        }}
       />
       <Stack.Screen
         name="AppointmentTherapistAddress"
@@ -71,7 +75,11 @@ function AppointmentNavigator(props) {
       <Stack.Screen
         name="AppointmentChat"
         component={AppointmentChatScreen}
-        options={{ headerShown: true, headerTitle: "Chat" }}
+        options={{
+          headerShown: true,
+          headerLeft: () => {},
+          headerTitle: "Chat",
+        }}
       />
       <Stack.Screen
         name="Inbox"

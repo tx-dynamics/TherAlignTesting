@@ -57,7 +57,7 @@ function MenuNavigator(props) {
       <Stack.Screen
         name="MenuScreen"
         component={MenuScreen}
-        options={{ headerShown: true, headerTitle: "" }}
+        options={{ headerShown: true, headerLeft: () => {}, headerTitle: "" }}
       />
 
       <Stack.Screen

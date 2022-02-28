@@ -2,19 +2,19 @@ import React from "react";
 import {
   View,
   StyleSheet,
-  Image,
-  TouchableOpacity,
   ScrollView,
+  TouchableOpacity,
+  Image,
 } from "react-native";
 import Screen from "../../../components/Screen";
 import AppText from "../../../components/Text";
 import AppTextInput from "../../../components/TextInput";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import colors from "../../../config/colors";
-import { ClientRoutes } from "../../../navigation/Routes";
 import { hp, wp } from "../../../Helpers/Responsiveness";
+import { ClientRoutes } from "../../../navigation/Routes";
 
-function InPersonAppointmentTab({ navigation }) {
+function OnlineConsultencyAppointmentTab({ navigation }) {
   return (
     <Screen style={styles.container}>
       <AppTextInput
@@ -33,7 +33,13 @@ function InPersonAppointmentTab({ navigation }) {
         >
           <CallCards />
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity
+          onPress={() =>
+            navigation.navigate(
+              ClientRoutes.APPOINTMENT_THERAPIST_ADDRESS_SCREEN
+            )
+          }
+        >
           <CallCards />
         </TouchableOpacity>
       </ScrollView>
@@ -55,13 +61,15 @@ const CallCards = (props) => {
       }}
     >
       {/* Card Image */}
-      <View>
+      <View style={{ flexDirection: "row" }}>
         <Image
           source={require("../../../assets/images/dr1.jpg")}
           style={{
             width: wp(20),
             height: hp(9),
+            overflow: "hidden",
             borderRadius: 20,
+            borderBottomRightRadius: 10,
           }}
         />
         <View
@@ -73,12 +81,12 @@ const CallCards = (props) => {
             justifyContent: "center",
             alignItems: "center",
             position: "absolute",
-            bottom: 0,
-            right: 0,
+            bottom: -8,
+            right: -8,
           }}
         >
           <MaterialCommunityIcons
-            name="map-marker-outline"
+            name="video-outline"
             size={20}
             color={"white"}
           />
@@ -89,7 +97,7 @@ const CallCards = (props) => {
 
       <View style={{ marginHorizontal: wp(5) }}>
         <AppText style={{ color: colors.medium, marginVertical: wp(1) }}>
-          Appointment
+          Video call
         </AppText>
         <AppText>Virginia Bailey</AppText>
         <AppText>9.00 AM - 8.10 PM</AppText>
@@ -102,4 +110,4 @@ const styles = StyleSheet.create({
   container: { flex: 1, padding: wp(2) },
 });
 
-export default InPersonAppointmentTab;
+export default OnlineConsultencyAppointmentTab;

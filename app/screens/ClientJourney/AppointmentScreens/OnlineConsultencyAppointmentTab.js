@@ -2,9 +2,9 @@ import React from "react";
 import {
   View,
   StyleSheet,
-  Image,
   ScrollView,
   TouchableOpacity,
+  Image,
 } from "react-native";
 import Screen from "../../../components/Screen";
 import AppText from "../../../components/Text";
@@ -22,6 +22,7 @@ function OnlineConsultencyAppointmentTab({ navigation }) {
         searchIcon
         iconAlign="left"
         handleChangeText={() => {}}
+        s
       />
       <ScrollView style={{ marginTop: wp(5) }}>
         <TouchableOpacity
@@ -61,13 +62,14 @@ const CallCards = (props) => {
       }}
     >
       {/* Card Image */}
-      <View>
+      <View style={{ flexDirection: "row" }}>
         <Image
           source={require("../../../assets/images/dr1.jpg")}
           style={{
             width: wp(20),
             height: hp(9),
             borderRadius: 20,
+            borderBottomRightRadius: 10,
           }}
         />
         <View
@@ -79,8 +81,8 @@ const CallCards = (props) => {
             justifyContent: "center",
             alignItems: "center",
             position: "absolute",
-            bottom: 0,
-            right: 0,
+            bottom: -8,
+            right: -8,
           }}
         >
           <MaterialCommunityIcons

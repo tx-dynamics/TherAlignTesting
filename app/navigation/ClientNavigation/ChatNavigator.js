@@ -54,6 +54,7 @@ function ChatNavigator(props) {
       <Stack.Screen
         options={{
           headerShown: true,
+          headerLeft: () => {},
           headerTitle: "",
         }}
         name="ChatScreen"
