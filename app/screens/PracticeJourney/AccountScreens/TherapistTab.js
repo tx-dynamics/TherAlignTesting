@@ -9,23 +9,24 @@ import {
 import AppText from "../../../components/Text";
 import AppTextInput from "../../../components/TextInput";
 import colors from "../../../config/colors";
+import ImagesPath from "../../../constants/ImagesPath";
 import { wp } from "../../../Helpers/Responsiveness";
 
 const messages = [
   {
     id: 1,
     username: "Dr. John Smith",
-    imageUri: require("../../../assets/images/dr1.jpg"),
+    imageUri: ImagesPath.dr1,
   },
   {
     id: 2,
     username: "Dr. Lina Thomsan",
-    imageUri: require("../../../assets/images/dr2.jpg"),
+    imageUri: ImagesPath.dr2,
   },
   {
     id: 3,
     username: "Dr. Dylan Oliver",
-    imageUri: require("../../../assets/images/dr3.jpg"),
+    imageUri: ImagesPath.dr3,
   },
 ];
 

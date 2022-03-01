@@ -13,6 +13,7 @@ import Screen from "../../../components/Screen";
 import SearchField from "../../../components/SearchField";
 import { wp, hp } from "../../../Helpers/Responsiveness";
 import ListItemSeperator from "../../../components/ListItemSeperator";
+import ImagesPath from "../../../constants/ImagesPath";
 
 function HomeScreen({ navigation }) {
   const [searchText, setSearchText] = useState("");
@@ -109,7 +110,7 @@ const SearchView = ({ navigation }) => {
     {
       id: 1,
       name: "Dr Mattie Harper",
-      imageUri: require("../../../assets/images/dr1.jpg"),
+      imageUri: ImagesPath.dr1,
       title: "Therapist",
       rating: 2,
       review: 122,
@@ -118,7 +119,7 @@ const SearchView = ({ navigation }) => {
     {
       id: 2,
       name: "Dr Clara Thomas",
-      imageUri: require("../../../assets/images/dr2.jpg"),
+      imageUri: ImagesPath.dr2,
       title: "Therapist",
       rating: 4,
       review: 142,
@@ -127,7 +128,7 @@ const SearchView = ({ navigation }) => {
     {
       id: 3,
       name: "Harpeet",
-      imageUri: require("../../../assets/images/dr3.jpg"),
+      imageUri: ImagesPathImagesPath.dr3,
       title: "Therapist",
       rating: 5,
       review: 222,
@@ -136,7 +137,7 @@ const SearchView = ({ navigation }) => {
     {
       id: 4,
       name: "Dr smith",
-      imageUri: require("../../../assets/images/dr4.jpg"),
+      imageUri: ImagesPath.dr4,
       title: "Therapist",
       rating: 1,
       review: 12,

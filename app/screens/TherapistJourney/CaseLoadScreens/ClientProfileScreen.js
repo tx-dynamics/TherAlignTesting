@@ -5,6 +5,7 @@ import AppText from "../../../components/Text";
 import colors from "../../../config/colors";
 import AppButton from "../../../components/Button";
 import { wp } from "../../../Helpers/Responsiveness";
+import ImagesPath from "../../../constants/ImagesPath";
 
 function ClientProfileScreen({ navigation }) {
   return (
@@ -19,7 +20,7 @@ function ClientProfileScreen({ navigation }) {
       >
         <View style={{ flexDirection: "row", alignItems: "center" }}>
           <Image
-            source={require("../../../assets/images/dr1.jpg")}
+            source={ImagesPath.dr1}
             style={{
               width: wp(20),
               height: wp(20),
@@ -31,7 +32,7 @@ function ClientProfileScreen({ navigation }) {
         </View>
         <TouchableOpacity onPress={() => navigation.navigate("ClientInbox")}>
           <Image
-            source={require("../../../assets/images/messanger.png")}
+            source={ImagesPath.dr2}
             style={{
               width: wp(15),
               height: wp(15),

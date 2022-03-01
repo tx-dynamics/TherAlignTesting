@@ -15,6 +15,7 @@ import SearchField from "../../../components/SearchField";
 import Calendar from "../../../components/Calendar";
 import Cards from "../../../components/Cards";
 import { hp, wp } from "../../../Helpers/Responsiveness";
+import ImagesPath from "../../../constants/ImagesPath";
 
 const MoodsList = [
   {
@@ -65,7 +66,7 @@ const TherapistList = [
   {
     id: 1,
     name: "Dr Mattie Harper",
-    imageUri: require("../../../assets/images/dr1.jpg"),
+    imageUri: ImagesPath.dr1,
     title: "Therapist",
     rating: 2,
     review: 122,
@@ -74,7 +75,7 @@ const TherapistList = [
   {
     id: 2,
     name: "Dr Clara Thomas",
-    imageUri: require("../../../assets/images/dr2.jpg"),
+    imageUri: ImagesPath.dr2,
     title: "Therapist",
     rating: 4,
     review: 142,
@@ -83,7 +84,7 @@ const TherapistList = [
   {
     id: 3,
     name: "Harpeet",
-    imageUri: require("../../../assets/images/dr3.jpg"),
+    imageUri: ImagesPath.dr3,
     title: "Therapist",
     rating: 5,
     review: 222,
@@ -92,7 +93,7 @@ const TherapistList = [
   {
     id: 4,
     name: "Dr smith",
-    imageUri: require("../../../assets/images/dr4.jpg"),
+    imageUri: ImagesPath.dr4,
     title: "Therapist",
     rating: 1,
     review: 12,
@@ -191,7 +192,7 @@ const SearchView = ({ TherapistList }) => (
           source={therapi.imageUri}
           style={{
             width: wp(20),
-            height: hp(10),
+            aspectRatio: 1,
             borderRadius: 10,
             marginEnd: wp(3),
           }}
@@ -217,13 +218,13 @@ const Header = ({ navigation }) => (
         <AppText
           style={{
             color: colors.primary,
-            fontSize: wp(5),
+            fontSize: wp(6),
             fontWeight: "700",
           }}
         >
           Quote{" "}
         </AppText>
-        <AppText style={{ color: colors.secondary, fontSize: wp(5) }}>
+        <AppText style={{ color: colors.secondary, fontSize: wp(6) }}>
           of the day
         </AppText>
       </View>
@@ -290,7 +291,7 @@ const MoodCards = ({
         key={key}
         style={{
           width: wp(16.6),
-          height: hp(9),
+          aspectRatio: 2 / 2.2,
           alignItems: "center",
           justifyContent: "center",
           borderWidth: 1,
@@ -343,7 +344,7 @@ const styles = StyleSheet.create({
     shadowRadius: 3,
     elevation: 10,
     width: wp(12),
-    height: wp(12),
+    aspectRatio: 1,
     borderRadius: wp(5),
     overflow: "hidden",
     marginVertical: wp(2),

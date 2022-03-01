@@ -12,6 +12,7 @@ import AppTextInput from "../../../components/TextInput";
 import colors from "../../../config/colors";
 import AppText from "../../../components/Text";
 import { wp } from "../../../Helpers/Responsiveness";
+import ImagesPath from "../../../constants/ImagesPath";
 
 function InPersonCaseLoadTab({ navigation }) {
   return (
@@ -49,7 +50,7 @@ const CallCards = (props) => {
       {/* Card Image */}
       <View>
         <Image
-          source={require("../../../assets/images/dr1.jpg")}
+          source={ImagesPath.dr1}
           style={{
             width: wp(20),
             height: wp(20),

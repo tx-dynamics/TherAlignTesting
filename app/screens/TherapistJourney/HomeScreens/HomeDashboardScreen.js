@@ -13,6 +13,7 @@ import Screen from "../../../components/Screen";
 import SearchField from "../../../components/SearchField";
 import AppButton from "../../../components/Button";
 import { wp } from "../../../Helpers/Responsiveness";
+import ImagesPath from "../../../constants/ImagesPath";
 
 function HomeDashboard({ navigation }) {
   const [searchText, setSearchText] = useState("");
@@ -83,7 +84,7 @@ const ConsultationCard = () => (
   >
     <View>
       <Image
-        source={require("../../../assets/images/dr1.jpg")}
+        source={ImagesPath.dr2}
         style={{ width: wp(20), height: wp(20), borderRadius: 10 }}
       />
       <MaterialCommunityIcons

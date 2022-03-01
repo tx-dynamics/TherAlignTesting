@@ -13,6 +13,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import colors from "../../../config/colors";
 import { hp, wp } from "../../../Helpers/Responsiveness";
 import { ClientRoutes } from "../../../navigation/Routes";
+import ImagesPath from "../../../constants/ImagesPath";
 
 function OnlineConsultencyAppointmentTab({ navigation }) {
   return (
@@ -64,7 +65,7 @@ const CallCards = (props) => {
       {/* Card Image */}
       <View style={{ flexDirection: "row" }}>
         <Image
-          source={require("../../../assets/images/dr1.jpg")}
+          source={ImagesPath.dr1}
           style={{
             width: wp(20),
             height: hp(9),

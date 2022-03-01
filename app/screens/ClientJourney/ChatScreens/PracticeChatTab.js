@@ -9,6 +9,7 @@ import {
 import AppText from "../../../components/Text";
 import AppTextInput from "../../../components/TextInput";
 import colors from "../../../config/colors";
+import ImagesPath from "../../../constants/ImagesPath";
 
 const messages = [
   {
@@ -16,21 +17,21 @@ const messages = [
     username: "Dr. John Smith",
     lastMessage: "I sent yout patient contact...",
     timeStamp: "06:23",
-    imageUri: require("../../../assets/images/dr1.jpg"),
+    imageUri: ImagesPath.dr1,
   },
   {
     id: 2,
     username: "Dr. Lina Thomsan",
     lastMessage: "How do you think?",
     timeStamp: "05:23",
-    imageUri: require("../../../assets/images/dr2.jpg"),
+    imageUri: ImagesPath.dr2,
   },
   {
     id: 3,
     username: "Dr. Dylan Oliver",
     lastMessage: "Yes, Tue.",
     timeStamp: "06:21",
-    imageUri: require("../../../assets/images/dr3.jpg"),
+    imageUri: ImagesPath.dr3,
   },
 ];
 

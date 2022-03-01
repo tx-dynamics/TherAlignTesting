@@ -25,8 +25,8 @@ const CalendarAppointmentScreen = () => {
           fontSize: wp(4),
           textDecorationLine: "underline",
         }}
-        dateNumberStyle={{ color: "gray", fontSize: wp(4) }}
-        dateNameStyle={{ color: "#000", fontSize: wp(4) }}
+        dateNumberStyle={{ color: "gray", fontSize: wp(3) }}
+        dateNameStyle={{ color: "#000", fontSize: wp(3) }}
         iconContainer={{ flex: 0.1 }}
         highlightDateNameStyle={{ color: colors.primary, fontSize: wp(4) }}
         highlightDateNumberStyle={{ color: colors.primary, fontSize: wp(4) }}

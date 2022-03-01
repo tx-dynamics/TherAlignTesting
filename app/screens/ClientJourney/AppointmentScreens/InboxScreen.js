@@ -5,6 +5,7 @@ import { MaterialCommunityIcons, Entypo } from "@expo/vector-icons";
 import AppTextInput from "../../../components/TextInput";
 import colors from "../../../config/colors";
 import { hp, wp } from "../../../Helpers/Responsiveness";
+import ImagesPath from "../../../constants/ImagesPath";
 
 function InboxScreen({ navigation }) {
   return (
@@ -13,7 +14,7 @@ function InboxScreen({ navigation }) {
         <AppText>9.40 AM</AppText>
         <View style={{ flexDirection: "row", marginVertical: wp(10) }}>
           <Image
-            source={require("../../../assets/images/dr1.jpg")}
+            source={ImagesPath.dr1}
             style={{
               width: wp(7),
               height: hp(3.5),

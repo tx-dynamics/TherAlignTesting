@@ -8,6 +8,7 @@ import CustomModal from "../../../components/CustomModal";
 import { hp, wp } from "../../../Helpers/Responsiveness";
 import { useNavigation } from "@react-navigation/native";
 import { ClientRoutes } from "../../../navigation/Routes";
+import ImagesPath from "../../../constants/ImagesPath";
 
 function AppointmentDetailPageScreen() {
   const [modalVisible, setModalVisible] = useState(false);
@@ -124,7 +125,7 @@ const Header = () => {
     <View style={{ flexDirection: "row", alignItems: "center" }}>
       <View style={{ flexDirection: "row", flex: 1, alignItems: "center" }}>
         <Image
-          source={require("../../../assets/images/dr1.jpg")}
+          source={ImagesPath.dr1}
           style={{ width: wp(20), height: hp(10), borderRadius: 20 }}
         />
         <View style={{ marginHorizontal: wp(5) }}>
@@ -136,7 +137,7 @@ const Header = () => {
         onPress={() => navigate(ClientRoutes.APPOINTMENT_INBOX_SCREEN)}
       >
         <Image
-          source={require("../../../assets/images/messanger.png")}
+          source={ImagesPath.messanger}
           resizeMode="contain"
           style={{
             width: wp(15),

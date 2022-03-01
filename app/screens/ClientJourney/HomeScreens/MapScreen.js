@@ -8,6 +8,7 @@ import colors from "../../../config/colors";
 import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
 import { ClientRoutes } from "../../../navigation/Routes";
 import { hp, wp } from "../../../Helpers/Responsiveness";
+import ImagesPath from "../../../constants/ImagesPath";
 
 const GOOGLE_API_KEY = "";
 
@@ -36,7 +37,7 @@ export default function MapScreen({ navigation, route }) {
         longitude: 73.1,
         latitude: 31.6,
       },
-      imageURI: require("../../../assets/images/dr1.jpg"),
+      imageURI: ImagesPath.dr1,
     },
     {
       id: 2,
@@ -49,7 +50,7 @@ export default function MapScreen({ navigation, route }) {
         longitude: 72.1,
         latitude: 31.1,
       },
-      imageURI: require("../../../assets/images/dr2.jpg"),
+      imageURI: ImagesPath.dr2,
     },
     {
       id: 3,
@@ -62,7 +63,7 @@ export default function MapScreen({ navigation, route }) {
         longitude: 71.0,
         latitude: 31.9,
       },
-      imageURI: require("../../../assets/images/dr3.jpg"),
+      imageURI: ImagesPath.dr3,
     },
     {
       id: 4,
@@ -75,7 +76,7 @@ export default function MapScreen({ navigation, route }) {
         longitude: 70.8,
         latitude: 30.8,
       },
-      imageURI: require("../../../assets/images/dr4.jpg"),
+      imageURI: ImagesPath.dr4,
     },
   ]);
 

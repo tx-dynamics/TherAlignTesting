@@ -6,11 +6,12 @@ import colors from "../../../config/colors";
 import { SliderBox } from "react-native-image-slider-box";
 import { AuthRoutes } from "../../../navigation/Routes";
 import { hp, wp } from "../../../Helpers/Responsiveness";
+import ImagesPath from "../../../constants/ImagesPath";
 
 const images = [
-  require("../../../assets/images/Discussion-cuate.png"),
-  require("../../../assets/images/Discussion-pana.png"),
-  require("../../../assets/images/Discussion-pana.png"),
+  ImagesPath.discussion_cuate,
+  ImagesPath.discussion_pana,
+  ImagesPath.discussion_cuate,
 ];
 
 function LoginOrSignUpScreen({ navigation }) {

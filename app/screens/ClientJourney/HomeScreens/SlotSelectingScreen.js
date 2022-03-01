@@ -13,6 +13,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import AppButton from "../../../components/Button";
 import { ClientRoutes } from "../../../navigation/Routes";
 import { hp, wp } from "../../../Helpers/Responsiveness";
+import ImagesPath from "../../../constants/ImagesPath";
 
 function SlotSelectingScreen({ navigation }) {
   return (
@@ -30,7 +31,7 @@ function SlotSelectingScreen({ navigation }) {
           }}
         >
           <Image
-            source={require("../../../assets/images/dr1.jpg")}
+            source={ImagesPath.dr1}
             style={{ width: wp(20), height: hp(10), borderRadius: 10 }}
           />
           <View style={{ marginHorizontal: wp(3) }}>

@@ -8,34 +8,35 @@ import {
 } from "react-native";
 import AppText from "../../../components/Text";
 import colors from "../../../config/colors";
+import ImagesPath from "../../../constants/ImagesPath";
 import { hp, wp } from "../../../Helpers/Responsiveness";
 
 const doctors = [
   {
     id: 1,
     name: "Dr Mattie Harper",
-    imageUri: require("../../../assets/images/dr1.jpg"),
+    imageUri: ImagesPath.dr1,
     planOfCareLink: "",
   },
 
   {
     id: 2,
     name: "Dr Clara Thomas",
-    imageUri: require("../../../assets/images/dr2.jpg"),
+    imageUri: ImagesPath.dr2,
     planOfCareLink: "",
   },
 
   {
     id: 3,
     name: "Harpeet",
-    imageUri: require("../../../assets/images/dr3.jpg"),
+    imageUri: ImagesPath.dr3,
     planOfCareLink: "",
   },
 
   {
     id: 4,
     name: "Dr smith",
-    imageUri: require("../../../assets/images/dr4.jpg"),
+    imageUri: ImagesPath.dr4,
     planOfCareLink: "",
   },
 ];

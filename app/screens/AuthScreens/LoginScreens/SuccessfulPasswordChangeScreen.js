@@ -6,6 +6,7 @@ import AppText from "../../../components/Text";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { AuthRoutes } from "../../../navigation/Routes";
 import { wp } from "../../../Helpers/Responsiveness";
+import ImagesPath from "../../../constants/ImagesPath";
 
 const win = Dimensions.get("window");
 function SuccessfulPasswordChangeScreen({ navigation }) {
@@ -21,7 +22,7 @@ function SuccessfulPasswordChangeScreen({ navigation }) {
             alignSelf: "center",
             marginVertical: wp(8),
           }}
-          source={require("../../../assets/images/batch.png")}
+          source={ImagesPath.batch}
         />
         <MaterialCommunityIcons
           style={{

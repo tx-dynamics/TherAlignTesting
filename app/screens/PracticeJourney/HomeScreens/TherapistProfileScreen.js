@@ -5,6 +5,7 @@ import ListItemSeperator from "../../../components/ListItemSeperator";
 import Screen from "../../../components/Screen";
 import AppText from "../../../components/Text";
 import colors from "../../../config/colors";
+import ImagesPath from "../../../constants/ImagesPath";
 import { hp, wp } from "../../../Helpers/Responsiveness";
 
 function TherapistProfileScreen({ route, navigation }) {
@@ -24,7 +25,7 @@ function TherapistProfileScreen({ route, navigation }) {
           <AppText>***** ({therapiDetail.rating})</AppText>
         </View>
         <Image
-          source={require("../../../assets/images/messanger.png")}
+          source={ImagesPath.messanger}
           style={{ width: wp(9), height: wp(8) }}
         />
       </View>
